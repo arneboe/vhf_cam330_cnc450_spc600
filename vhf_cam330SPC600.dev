@@ -1,0 +1,83 @@
+device name                                      #TYP VHF-Controller an FL2 mit 5mm Spindelsteigung
+mode (0=VHF, 1=SMS68, 2=ISEL)                    #MOD 0
+Z-mode (0=motor, 1=up/down)                      #ZUD 0
+spindle lift time (ms)                           #TIM 0
+critical angle handler (speed or 0=off)          #CRI 1000
+console, VHF-compatible (0=no, 1=yes)            #CON 1
+compatibility mode (1=on, 0=off)                 #SUR 1
+baud rate                                        #BAU 19200
+parameter (0=8N1, 1=7E1)                         #PAR 0
+flatness                                         #FLT 60
+maximum length of Lines (1/1000 mm, 0=off)       #MAL 5000
+minimum length of Lines (1/1000 mm, 0=off)       #MIL 500
+
+Unix:
+device                                           #DEV "/dev/cub"
+
+MS-Windows:
+Port (COM1 - COM4)                               #PRT COM2
+Handshake (0=none,1=RTS/CTS,2=XONXOFF)           #HSK 0
+
+X Y Z-maximum range (mm)                         #SIZ 790 1024 160
+X Y Z-resolution controler (points/inch)         #RES 25400 25400 25400
+X Y Z-resolution of mechanics (steps/mm)         #SCL 80 80 80
+
+XY-minimum speed for draw (steps/s)              #XMI 30
+XY-maximum speed for draw (steps/s)              #XMA 3000
+Z -minimum speed for draw (steps/s)              #ZMI 30
+Z -maximum speed for draw (steps/s)              #ZMA 3000
+
+XY-speed for move (steps/s)                      #XPV 2500
+Z-speed for move (steps/s)                       #ZPV 2500
+
+initialize                                       #INI "^s0;AP5000,5000,5000;CO790000,1024000,160000;"
+initialization 2nd part                          #IN1 "VB200,200,200;RV2500,300;RF;SO1,0;SO2,0;"
+adjustment drive                                 #REF "RF;"
+return value for ok                              #RET 48
+
+wait                                             #DEL
+
+set speed                                        #STV "EU%.0f;"
+
+move absolut (x,y)                               #MOV "PA%.0f,%.0f;"
+move absolut (z)                                 #MVZ "ZA%.0f;"
+
+draw                                             #DRW "PA"
+coordinates                                      #COO "%.0f,%.0f"
+seperator                                        #SEP ","
+terminator                                       #TRM ";"
+
+arc (x-center,y-center,angle)                    #ARC "AA%.0f,%.0f,%.0f;"
+tool up                                          #TUP "PU;"
+tool down                                        #TDN "PD;"
+
+bits: 0 - 7
+Port (port, bits)                                #OUT "SO%d,%d;"
+
+****************************
+* jaeger spindle:
+* port 1, bits 0-7: revolution
+* OSP may be removed (or set to 0 0)
+*
+* vhf spc600:
+* port 1, bits 0-7 and port 2, bits 0-1: revolution
+* input, bit 0: rotation achieved
+* input, bit 1: spindle stop
+* input, bit 2: spindel error
+* STI may be removed (or set to 0)
+****************************
+
+spindle start/stop time (ms)                     STI 3000
+spindle revolution (port, range, min, max)       #ORV 1 20000 700 20000
+more bits for revolution (port, up to bit)       #OSP 2 1
+
+pneumatic (port, bit)                            #OPN 2 4
+switch 1, vacuum (bit)                           #OS1 2 6
+switch 2, suction (bit)                          #OS2 2 7
+switch 3 (bit)                                   #OS3 2 2
+switch 4 (bit)                                   #OS4 2 3
+
+input                                            #INP "RI;"
+rotation achieved (bit)                 	     #ISP 0
+spindle stop (bit)                               #IST 1
+spindel error (bit)                              #ISE 2

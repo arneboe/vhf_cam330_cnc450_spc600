@@ -1,0 +1,13 @@
+== vhf_cam330_cnc450_spc600
+Stuff needed to get the VHF CAM330 running with Fusion 360
+
+
+=== Files
+
+vhf_cnc450.cps -- Fusiont 360 exporter
+
+autodesk_export_cnc.cps -- Default autodesk cnc exporter for cps development
+
+vhf_cam330SPC600.dev -- Configuration file used by cenon 3.3 to control the cnc450.
+
+vhf_cam330_Anleitung_ocr.pdf -- German manual for the cam330 from 1996.
