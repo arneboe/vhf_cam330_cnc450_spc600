@@ -1,0 +1,26 @@
+=== Dinge, die noch getestet werden müssen
+- Kann man mit MA mit mehreren Parametern kleinschrittig fahren ohne zu bremsen zwischendurch?
+- Kann man mit PA kleinschrittig fahren ohne zu bremsen zwischendurch?
+- Wo genau liegt die Grenze ab der MA Quatsch macht
+- Ab welcher Geschwindigkeit verliert die Z-Achse Schritte?
+- Verlieren die anderen Achsen auch ab bestimmten Geschwindigkeiten Schritte?
+- Fusion gibt nur eine Vorschubgeschwindigkeit aus, die soll dann für alle 3 Achsen gelten. Prüfen wie sich das verhält bei "Plunge" und "Helix".
+
+=== Dinge, die der Post Processor können muss
+- Erstmall alle Befehle buffern und dann in einem zweiten pass Verarbeiten um sie zusammenzufassen.
+- Alternativ, alles direkt möglichst dumm umwandeln und den rest im Sender machen?
+- 3D Moves mit Achsenlänge über Xmm zerstückeln in kleinere moves.
+- Möglichst viele Werte in einen Befehl hängen.
+- Maximale Befehlslänge so einstellen, dass der Sender dahinter noch ein NOOP bekommt. Also vermutlich 77 Zeichen.
+- Moves ohne Z-Änderung mit PA machen und auch möglichst viele zusammenfassen.
+
+
+
+=== Dinge, die der Sender können muss
+- Immer einen Befehl und ein NOOP senden. Dann zweites okays abwarten bevor weiter gesendet wird.
+- NOOP = "OE;" //Gibt den letzten Fehler aus, also sollte "!0 OK" oder so ausgeben. Kürzester NOOP
+- Bei Spindelgeschwindigkeitsänderung X Sekunden warten bis die Spindengeschwindigkeit erreicht wurde.
+- Im Fehlerfall (return wert != "0") abbrechen.
+- Manuelle Steuerung zulassen (absolut/relativ)
+- Aktuelle Position mitzählen und anzeigen
+
