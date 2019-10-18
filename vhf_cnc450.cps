@@ -10,16 +10,15 @@ extension = "cnc";
 
 
 capabilities = CAPABILITY_MILLING;
-
-allowMachineChangeOnSection = true;
-allowHelicalMoves = true;
-allowSpiralMoves = true;
-// do not allow circular motion. Everything will be linear interpolated
-allowedCircularPlanes = 0; 
-//since we do not allow circular paths the following settings are ignored
-//maximumCircularSweep = toRad(1000000);
-//minimumCircularRadius = spatial(0.001, MM);
-//maximumCircularRadius = spatial(1000000, MM);
+tolerance = spatial(0.002, MM);
+minimumChordLength = spatial(0.01, MM);
+minimumCircularRadius = spatial(0.01, MM);
+maximumCircularRadius = spatial(1000, MM);
+minimumCircularSweep = toRad(0.01);
+maximumCircularSweep = toRad(360);
+allowHelicalMoves = false;
+allowSpiralMoves = false;
+allowedCircularPlanes =  (1 << PLANE_XY); // allow any circular motion
 
 /**Specifies whether the work plane is mapped to the model
  * origin and work plane.
@@ -35,59 +34,34 @@ mapWorkOrigin = true;
 /**Specifies whether the program namemust be an integer */
 programNameIsInteger = false;
 
-/**Contains the output unitsof the post processor. 
- * Only MM or IN are allowed. However we output hpgl units...
- * Thus this is rather useless :-) */
+/**The output unitsof the post processor.  */
 unit = MM;
 
 // user-defined properties
 properties = {
-    dummy: true, // show the commonly interesting current state
+    x_offset: 0.0,
+    y_offset: 0.0,
+    z_offset: 0.0
   };
 
   // user-defined property definitions
 propertyDefinitions = {
-    dummy: {title:"dummy bool prop", description:"Lorem bla bla", type:"boolean"},
+    x_offset: {title:"x offset", description:"x offset", type:"float"},
+    y_offset: {title:"y offset", description:"y offset", type:"float"},
+    z_offset: {title:"z offset", description:"z offset", type:"float"},
+  
   };
 
 
 //format definitions
-//TODO maybe?!
-var linFormat = createFormat({decimals:0});
+var xyzFormat = createFormat({decimals:(unit == MM ? 4 : 6)});
+var angleFormat = createFormat({decimals:3, scale:DEG});
 
-
-function dump(name, _arguments) {
-
-    writeln(name);
-}
 
 /** Post processor initialization */
 function onOpen()
 {
-    //do init
-     //TODO no idea!
-    writeln("^s0;")
-
-    //maybe setting the maximum line length to 5mm?! FIXME
-    writeln("AP5000,5000,5000;")
-
-    //set the table dimensions in um
-    writeln("CO790000,1024000,160000;")
-
-    //TODO no idea FIXME
-    writeln("VB200,200,200;")
-
-    //TODO no idea
-    writeln("RV2500,300;")
-
-    //TODO no idea. Doc says "adjustment drive" but dont know what that means
-    //might be moving to each endanschlag...
-    writeln("RF;")
-
-    //set ports one and two to zero.
-    //those ports contain the bits for spindel speed and the custom output pins.
-    writeln("SO1,0;")
-    writeln("SO2,0;")
+    writeln("THIS_IS_VHF330_G_CODE_DIALECT")
 }
 
 /** Each parameter setting */
@@ -99,13 +73,13 @@ function onParameter(string, value)
 /**Start of an operation */
 function onSection()
 {
-
+    writeln("BEGIN_SECTION")
 }
 
 /**End of an operat */
 function onSectionEnd()
 {
-
+    writeln("END_SECTION")
 }
 
 /**Start of a special cycle operation (Stock Transfer) */
@@ -144,22 +118,21 @@ function onSpindleSpeed(value)
 
 }
 
-/** Converts mm to cnc450 units */
-function convertMM(value)
+function transform_x(x)
 {
-    //TODO no idea what this is.
-    //For now just assume um
-    return value * 1000
+    return x + properties.x_offset;
 }
 
-/** Convert speed from mm/s to steps */
-function convertSpeed(speed)
+function transform_y(y)
 {
-    //FIXME make sure that input speed is in mm?!
-    //80 steps = 1mm
-    return speed * 80;
+    return y + properties.y_offset;
 }
 
+function transform_z(z)
+{
+    z = z * -1.0;
+    return z + properties.z_offset;
+}
 
 var lastFeed = -1;
 var lastX = -1;
@@ -175,42 +148,58 @@ function onLinear(x, y, z, feed)
      *  (3) output z
      */
 
-    if(lastFeed != feed)
-    {
-        lastFeed = feed;
-        feed_conv = linFormat.format(convertSpeed(feed));
-        writeln("EU" + feed_conv + ";");
-    }
-
-    if(lastX != x || lastY != y)
-    {
-        lastX = x;
-        lastY = y;
-        x_conv = linFormat.format(convertMM(x));
-        y_conv = linFormat.format(convertMM(y));
-        writeln("PA" + x_conv + "," + y_conv + ";");
-    }
-
-    if(lastZ != z)
-    {
-        lastZ = z;
-        z_conv = linFormat.format(convertMM(z));
-        writeln("ZA" + z_conv + ";");
-    }
+    x_tf = transform_x(x)
+    y_tf = transform_y(y)
+    z_tf = transform_z(z)
+    x_conv = xyzFormat.format(x_tf)
+    y_conv = xyzFormat.format(y_tf)
+    z_conv = xyzFormat.format(z_tf)
+    f_conv = xyzFormat.format(feed)
+    writeln("G1 X" + x_conv +" Y" + y_conv +" Z" + z_conv + " F" + f_conv)
 }
 
 /**3-axis rapid move */
 function onRapid(x, y, z)
 {
-    //there is no special rapid mode. Just use linear.
-    onLinear(x, y, z, 2000)
+    x_tf = transform_x(x)
+    y_tf = transform_y(y)
+    z_tf = transform_z(z)
+    x_conv = xyzFormat.format(x_tf)
+    y_conv = xyzFormat.format(y_tf)
+    z_conv = xyzFormat.format(z_tf)
+    writeln("G0 X" + x_conv +" Y" + y_conv +" Z" + z_conv)
 }
 
 /** Circular move */
-function onCircular(clockwise, cx, cy, cz, x, y, z, feed)
-{
+function onCircular(clockwise, cx, cy, cz, x, y, z, feed) {
+    if (isHelical() || (getCircularPlane() != PLANE_XY)) {
+      linearize(tolerance);
+      return;
+    }
 
-}
+    //hack to linearize if arc doesnt fit 
+    cx_tf = transform_x(cx)
+    cy_tf = transform_y(cy)
+
+    //FIXME should be properties
+    if(cx_tf <= 0.1 || cx_tf >= 790.0)
+    {
+        linearize(tolerance);
+        return;
+    }
+    if(cy_tf <= 0.1 || cy_tf >= 1000.0)
+    {
+        linearize(tolerance);
+        return;
+    }
+
+    cx_conv = xyzFormat.format(cx_tf)
+    cy_conv = xyzFormat.format(cy_tf)
+    angle = angleFormat.format((clockwise ? -1 : 1) * getCircularSweep())
+    f_conv = xyzFormat.format(feed)
+
+    writeln("GAA cX" + cx_conv + " cY" + cy_conv + " A" + angle + " F" + f_conv)
+  }
 
 /** Dwell Manual NC command */
 function onDwell(value)
