@@ -1,0 +1,19 @@
+
+Commands:
+
+Move rapod
+G0 Xd.d Yd.d Zd.d
+
+Move absolut
+G1 Xd.d Yd.d Zd.d Fd.d
+
+Arc Absolut
+GAA cXd.d cYd.d Ad.d Fd.d  (center x in mm, center y in mm, angle in deg, feed speed)
+
+
+header:
+THIS_IS_VHF330_G_CODE_DIALECT
+
+sections:
+BEGIN_SECTION
+END_SECTION

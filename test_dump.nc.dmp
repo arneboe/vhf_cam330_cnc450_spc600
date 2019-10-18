@@ -1,0 +1,1679 @@
+-1: onOpen()
+0: onParameter('product-id', 'fusion360')
+1: onParameter('generated-by', 'Fusion 360 CAM 2.0.6516')
+2: onParameter('generated-at', 'Freitag, 18. Oktober 2019 13:35:57')
+3: onParameter('hostname', 'user-PC')
+4: onParameter('username', 'user')
+5: onParameter('document-path', 'Untitled v2')
+6: onParameter('document-id', 'bbabc37f-f55b-403b-b626-58215e2a56da')
+7: onParameter('model-version', 'd090fc14-32d0-4cbc-ab89-d93412c82acc')
+8: onParameter('leads-supported', 1)
+9: onParameter('job-description', 'Setup2')
+11: onParameter('stock', '((0, 0, -19), (100, 200, 0))')
+13: onParameter('stock-lower-x', 0)
+15: onParameter('stock-lower-y', 0)
+17: onParameter('stock-lower-z', -19)
+19: onParameter('stock-upper-x', 100.00000000000003)
+21: onParameter('stock-upper-y', 200)
+23: onParameter('stock-upper-z', 0)
+25: onParameter('part-lower-x', 0)
+27: onParameter('part-lower-y', 0)
+29: onParameter('part-lower-z', -19)
+31: onParameter('part-upper-x', 100.00000000000003)
+33: onParameter('part-upper-y', 200)
+35: onParameter('part-upper-z', 0)
+37: onParameter('notes', '')
+38: onParameter('operation-strategy', 'pocket2d')
+39: onParameter('operation-comment', '2D-Tasche2')
+40: onParameter('autodeskcam:operation-id', 7)
+41: onParameter('leads-supported', 1)
+42: onParameter('autodeskcam:path', 'Setups\Setup2\2D-Tasche2')
+43: onParameter('operation:advancedMode', 0)
+44: onParameter('operation:betaMode', 0)
+45: onParameter('operation:alphaMode', 0)
+46: onParameter('operation:isXpress', 0)
+47: onParameter('operation:licenseMultiaxis', 1)
+48: onParameter('operation:license3D', 1)
+49: onParameter('operation:metric', 1)
+50: onParameter('operation:isAssemblyDocument', 1)
+51: onParameter('operation:context', 'operation')
+52: onParameter('operation:strategy', 'pocket2d')
+53: onParameter('operation:operation_description', '2D Pocket')
+54: onParameter('operation:tool_type', 'flat end mill')
+55: onParameter('operation:undercut', 0)
+56: onParameter('operation:tool_isTurning', 0)
+57: onParameter('operation:tool_isMill', 1)
+58: onParameter('operation:tool_isDrill', 0)
+59: onParameter('operation:tool_taperedType', 'tapered_bull_nose')
+60: onParameter('operation:tool_unit', 'millimeters')
+61: onParameter('operation:tool_number', 4)
+62: onParameter('operation:tool_diameterOffset', 4)
+63: onParameter('operation:tool_lengthOffset', 4)
+64: onParameter('operation:tool_compensationOffset', 4)
+65: onParameter('operation:tool_turret', 0)
+66: onParameter('operation:tool_manualToolChange', 0)
+67: onParameter('operation:tool_breakControl', 0)
+68: onParameter('operation:tool_live', 1)
+69: onParameter('operation:tool_coolant', 'disabled')
+70: onParameter('operation:tool_material', 'hss')
+71: onParameter('operation:tool_description', '')
+72: onParameter('operation:tool_comment', '')
+73: onParameter('operation:tool_vendor', '')
+74: onParameter('operation:tool_productId', '')
+76: onParameter('operation:tool_diameter', 2)
+78: onParameter('operation:tool_diameterDovetail', 2)
+80: onParameter('operation:tool_tipDiameter', 2)
+82: onParameter('operation:tool_tipOffset', 0)
+84: onParameter('operation:tool_cornerRadius', 0)
+86: onParameter('operation:tool_taperAngle', 0)
+88: onParameter('operation:tool_tipAngle', 0)
+90: onParameter('operation:tool_threadProfileAngle', 0)
+92: onParameter('operation:tool_tipLength', 0)
+94: onParameter('operation:tool_fluteLength', 4)
+96: onParameter('operation:tool_shoulderLength', 6)
+98: onParameter('operation:tool_bodyLength', 10)
+100: onParameter('operation:tool_overallLength', 10)
+102: onParameter('operation:tool_shaftDiameter', 2)
+104: onParameter('operation:tool_segmentHeight', 1)
+106: onParameter('operation:tool_segmentDiameterLower', 4)
+108: onParameter('operation:tool_segmentDiameterUpper', 4)
+110: onParameter('operation:tool_shaftSegmentHeight', 2)
+112: onParameter('operation:tool_shaftSegmentDiameterLower', 2)
+114: onParameter('operation:tool_shaftSegmentDiameterUpper', 2)
+116: onParameter('operation:tool_threadPitch', 0)
+117: onParameter('operation:tool_numberOfTeeth', 0)
+118: onParameter('operation:tool_numberOfFlutes', 3)
+119: onParameter('operation:holder_attached', 0)
+120: onParameter('operation:holder_description', 'Maritool CAT40-ER32-2.35')
+121: onParameter('operation:holder_comment', '')
+122: onParameter('operation:holder_vendor', 'Maritool')
+123: onParameter('operation:holder_productId', 'CAT40-ER32-2.35')
+124: onParameter('operation:holder_productLink', '')
+125: onParameter('operation:holder_libraryName', '')
+126: onParameter('operation:tool_productLink', '')
+128: onParameter('operation:tool_spindleSpeed', 8723.94)
+130: onParameter('operation:tool_stockDiameter', 2)
+132: onParameter('operation:tool_surfaceSpeed', 54814.131628716284)
+134: onParameter('operation:tool_rampSpindleSpeed', 8723.94)
+136: onParameter('operation:tool_feedCutting', 837.03)
+138: onParameter('operation:tool_feedPerTooth', 0.03198210900120817)
+140: onParameter('operation:tool_feedProbeLink', 3000)
+142: onParameter('operation:tool_feedEntry', 1000)
+144: onParameter('operation:tool_feedExit', 1000)
+146: onParameter('operation:tool_feedProbeMeasure', 300)
+148: onParameter('operation:tool_feedRamp', 333.33299999999986)
+150: onParameter('operation:tool_feedPlunge', 333.33299999999986)
+152: onParameter('operation:tool_feedPerRevolution', 0.038208997310848064)
+154: onParameter('operation:tool_feedRetract', 333.33299999999986)
+155: onParameter('operation:tool_clockwise', 1)
+156: onParameter('operation:featureOperationId', 'none')
+158: onParameter('operation:surfaceZHigh', 0)
+160: onParameter('operation:surfaceZLow', -19)
+162: onParameter('operation:surfaceXLow', 0)
+164: onParameter('operation:surfaceXHigh', 100.00000000000003)
+166: onParameter('operation:surfaceYLow', 0)
+168: onParameter('operation:surfaceYHigh', 200)
+170: onParameter('operation:stockZHigh', 0)
+172: onParameter('operation:stockZLow', -19)
+174: onParameter('operation:stockXLow', 0)
+176: onParameter('operation:stockXHigh', 100.00000000000003)
+178: onParameter('operation:stockYLow', 0)
+180: onParameter('operation:stockYHigh', 200)
+182: onParameter('operation:restMaterialCutterDiameter', 4)
+184: onParameter('operation:restMaterialCornerRadius', 0)
+186: onParameter('operation:restMaterialTaperAngle', 0)
+188: onParameter('operation:restMaterialShoulderLength', 0)
+189: onParameter('operation:restMaterialTool', '')
+190: onParameter('operation:unwrap', 0)
+192: onParameter('operation:wrap_cylinder_radius', 0)
+194: onParameter('operation:wrap_nominalRadius_offset', 0)
+196: onParameter('operation:wrap_nominalRadius_value', 0)
+197: onParameter('operation:view_orientation_mode', 'useWCS')
+198: onParameter('operation:view_orientation_flipZ', 0)
+199: onParameter('operation:view_orientation_flipX', 0)
+200: onParameter('operation:view_orientation_flipY', 0)
+201: onParameter('operation:view_orientation_flipRotary', 0)
+202: onParameter('operation:view_origin_mode', 'jobOrigin')
+203: onParameter('operation:view_origin_boxPoint', 'top center')
+204: onParameter('operation:clearanceHeight_mode', 'from retract height')
+206: onParameter('operation:clearanceHeight_offset', 10)
+208: onParameter('operation:clearanceHeight_value', 15)
+209: onParameter('operation:clearanceHeight_absolute', 1)
+210: onParameter('operation:retractHeight_mode', 'from stock top')
+212: onParameter('operation:retractHeight_offset', 5)
+214: onParameter('operation:retractHeight_value', 5)
+215: onParameter('operation:retractHeight_absolute', 1)
+216: onParameter('operation:feedHeight_mode', 'from top')
+218: onParameter('operation:feedHeight_offset', 5)
+220: onParameter('operation:feedHeight_value', 5)
+221: onParameter('operation:useZFeed', 1)
+222: onParameter('operation:feedHeight_absolute', 1)
+223: onParameter('operation:topHeight_mode', 'from stock top')
+225: onParameter('operation:topHeight_offset', 0)
+227: onParameter('operation:topHeight_value', 0)
+228: onParameter('operation:topHeight_absolute', 1)
+229: onParameter('operation:bottomHeight_mode', 'from contour')
+231: onParameter('operation:bottomHeight_offset', 0)
+233: onParameter('operation:bottomHeight_value', 0)
+234: onParameter('operation:bottomHeight_absolute', 0)
+236: onParameter('operation:tolerance', 0.1)
+238: onParameter('operation:contourTolerance', 0.05)
+240: onParameter('operation:calculationTolerance', 0.1)
+242: onParameter('operation:thinningTolerance', 0.001)
+244: onParameter('operation:chainingTolerance', 0.01)
+245: onParameter('operation:compensation', 'left')
+246: onParameter('operation:rightCompensation', 0)
+247: onParameter('operation:compensationType', 'computer')
+249: onParameter('operation:compensationDeltaRadius', 0)
+251: onParameter('operation:minimumCuttingRadius', 0)
+253: onParameter('operation:finishingSmoothingDeviation', 0)
+254: onParameter('operation:doFinishingPasses', 0)
+255: onParameter('operation:numberOfFinishingStepovers', 0)
+257: onParameter('operation:finishingStepover', 0.2)
+258: onParameter('operation:leadsForAllFinishingPasses', 0)
+260: onParameter('operation:finishFeedrate', 837.03)
+261: onParameter('operation:nullPass', 0)
+263: onParameter('operation:finishingOverlap', 0)
+265: onParameter('operation:fragmentExtensionDistance', 0)
+266: onParameter('operation:preserveOrder', 0)
+267: onParameter('operation:bothWays', 0)
+269: onParameter('operation:maximumStepover', 1.9000000000000001)
+271: onParameter('operation:minimumCuttingRadiusJl', 0)
+272: onParameter('operation:useMorphedSpiralMachining', 0)
+274: onParameter('operation:minimumRoughingStepover', 0.19000000000000003)
+275: onParameter('operation:allowStepoverCusps', 0)
+277: onParameter('operation:flatTipRadius', 1)
+279: onParameter('operation:maximumEnsureCutRadius', 0.9750000000000001)
+281: onParameter('operation:ensureCutRadius', 0.9750000000000001)
+282: onParameter('operation:applyFinalSmoothingDeviation', 0)
+284: onParameter('operation:smoothingDeviation', 0.1)
+286: onParameter('operation:minimumFinishingStepover', 0.05)
+287: onParameter('operation:spiralCircularPockets', 1)
+289: onParameter('operation:maximumStepdown', 0)
+290: onParameter('operation:numberOfFinishingStepdowns', 0)
+292: onParameter('operation:finishingStepdown', 0)
+294: onParameter('operation:slopeAngle', 0)
+296: onParameter('operation:wallTaperAngle', 0)
+297: onParameter('operation:onlyFinishFinal', 0)
+298: onParameter('operation:roughFinal', 1)
+299: onParameter('operation:useEvenStepdowns', 0)
+300: onParameter('operation:orderByDepth', 0)
+301: onParameter('operation:orderByStep', 0)
+303: onParameter('operation:stockToLeave', 0.5)
+305: onParameter('operation:verticalStockToLeave', 0.5)
+306: onParameter('operation:simpleStockToLeave', 0)
+308: onParameter('operation:smoothingFilterTolerance', 0)
+310: onParameter('operation:reducedFeedChange', 25)
+312: onParameter('operation:reducedFeedRadius', 0)
+314: onParameter('operation:reducedFeedDistance', 0)
+316: onParameter('operation:reducedFeedrate', 209.2575)
+317: onParameter('operation:reduceOnlyInnerCorners', 1)
+318: onParameter('operation:highFeedrateMode', 'disabled')
+320: onParameter('operation:highFeedrate', 1000)
+321: onParameter('operation:allowRapidRetract', 1)
+323: onParameter('operation:safeDistance', 1)
+324: onParameter('operation:keepToolDown', 1)
+326: onParameter('operation:stayDownDistance', 50)
+328: onParameter('operation:liftHeight', 0)
+329: onParameter('operation:smoothTransitions', 1)
+330: onParameter('operation:doLeadIn', 1)
+332: onParameter('operation:entry_radius', 0.2)
+334: onParameter('operation:entry_sweep', 90)
+336: onParameter('operation:entry_distance', 0.2)
+337: onParameter('operation:entry_perpendicular', 0)
+339: onParameter('operation:entry_verticalRadius', 0.2)
+341: onParameter('operation:leadInRadius', 0.2)
+343: onParameter('operation:leadInVerticalRadius', 0.2)
+344: onParameter('operation:doLeadOut', 1)
+345: onParameter('operation:exit_sameAsEntry', 1)
+347: onParameter('operation:exit_radius', 0.2)
+349: onParameter('operation:exit_sweep', 90)
+351: onParameter('operation:exit_distance', 0.2)
+352: onParameter('operation:exit_perpendicular', 0)
+354: onParameter('operation:exit_verticalRadius', 0.2)
+356: onParameter('operation:leadOutRadius', 0.2)
+358: onParameter('operation:leadOutVerticalRadius', 0.2)
+359: onParameter('operation:rampType', 'plunge')
+360: onParameter('operation:allowPlungingOutsideStockJl', 0)
+362: onParameter('operation:rampAngle', 2)
+364: onParameter('operation:maximumRampZStepdown', 4)
+366: onParameter('operation:rampClearanceHeight', 2.5)
+368: onParameter('operation:rampRadialClearance', 0)
+370: onParameter('operation:helicalRampDiameter', 0)
+372: onParameter('operation:minimumRampDiameter', 0)
+373: onParameter('operation:smoothRampJl', 0)
+374: onParameter('operation:allowPlunging', 1)
+375: onParameter('operation:allowHelicalRamps', 0)
+376: onParameter('operation:allowContourRamps', 0)
+377: onParameter('operation:allowSmoothContourRamps', 0)
+378: onParameter('operation:allowZigZagRamps', 0)
+380: onParameter('operation:tool_stepdown', 1)
+382: onParameter('operation:tool_finishingStepdown', 0.2)
+384: onParameter('operation:tool_stepover', 1)
+386: onParameter('operation:tool_finishingStepover', 0.2)
+387: onParameter('operation:tool_rampType', 'helix')
+389: onParameter('operation:tool_rampAngle', 2)
+390: onParameter('movement:lead_in', 1000)
+391: onParameter('movement:cutting', 837.03)
+392: onParameter('movement:lead_out', 1000)
+393: onParameter('movement:transition', 837.03)
+394: onParameter('movement:direct', 1000)
+395: onParameter('movement:helix_ramp', 333.33299999999986)
+396: onParameter('movement:profile_ramp', 333.33299999999986)
+397: onParameter('movement:zigzag_ramp', 333.33299999999986)
+398: onParameter('movement:ramp', 333.33299999999986)
+399: onParameter('movement:plunge', 333.33299999999986)
+400: onParameter('movement:predrill', 837.03)
+401: onParameter('movement:extended', 837.03)
+402: onParameter('movement:reduced', 837.03)
+403: onParameter('movement:finish_cutting', 837.03)
+404: onSection()
+  currentSection.unit=1
+  currentSection.workOrigin=(0, 0, 0)
+  currentSection.workPlane=[[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+  currentSection.wcsOrigin=(0, 0, 0)
+  currentSection.wcsPlane=[[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+  currentSection.workOffset=0
+  currentSection.dynamicWCSOrigin=(0, 0, 0)
+  currentSection.dynamicWCSPlane=[[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+  currentSection.dynamicWorkOffset=0
+  currentSection.fcsOrigin=(3.58375, -0.661808, -19)
+  currentSection.fcsPlane=[[0, 1, 0], [-1, 0, 0], [0, 0, 1]]
+  currentSection.modelOrigin=(0.661808, 3.58375, -19)
+  currentSection.modelPlane=[[0, 1, -0], [-1, 0, 0], [0, 0, 1]]
+  currentSection.type=0
+  currentSection.quality=0
+  currentSection.jetMode=0
+  currentSection.tailstock=false
+  currentSection.partCatcher=false
+  currentSection.spindle=0
+  currentSection.feedMode=0
+  currentSection.toolOrientation=0
+  tool.number=4
+  tool.diameterOffset=4
+  tool.lengthOffset=4
+  tool.secondaryLengthOffset=0
+  tool.turningTool=false
+  tool.jetTool=false
+  tool.holderNumber=0
+  tool.surfaceSpeed=0
+  tool.maximumSpindleSpeed=0
+  tool.spindleRPM=8723.94
+  tool.rampingSpindleRPM=8723.94
+  tool.clockwise=true
+  tool.numberOfFlutes=3
+  tool.threadPitch=0
+  tool.coolant=0
+  tool.material=0
+  tool.description=''
+  tool.comment=''
+  tool.vendor=''
+  tool.productId=''
+  tool.holderDescription='Maritool CAT40-ER32-2.35'
+  tool.holderComment=''
+  tool.holderVendor='Maritool'
+  tool.holderProductId='CAT40-ER32-2.35'
+  tool.aggregateId=''
+  tool.unit=1
+  tool.type=5
+  tool.diameter=2
+  tool.tipDiameter=2
+  tool.cornerRadius=0
+  tool.taperAngle=0
+  tool.fluteLength=4
+  tool.shoulderLength=6
+  tool.shaftDiameter=2
+  tool.bodyLength=10
+  tool.overallLength=10
+  tool.shaft=[object Shaft]
+  tool.jetDiameter=0
+  tool.jetDistance=0
+  tool.holderTipDiameter=38.099998474121094
+  tool.holderDiameter=63.55080032348633
+  tool.holderLength=62.83959972858429
+  tool.holder=[object Holder]
+  tool.boringBarOrientation=0
+  tool.compensationOffset=0
+  tool.secondaryCompensationOffset=0
+  tool.turret=0
+  tool.insertType=3
+  tool.holderType=0
+  tool.compensationMode=0
+  tool.inscribedCircleDiameter=0
+  tool.edgeLength=0
+  tool.noseRadius=0
+  tool.reliefAngle=0
+  tool.thickness=0
+  tool.grooveWidth=0
+  tool.crossSection=''
+  tool.tolerance='M'
+  tool.pitch=0
+  tool.hand='R'
+  tool.clamping=''
+  tool.manualToolChange=false
+  tool.breakControl=false
+  tool.liveTool=true
+  tool.tappingFeedrate=0
+  tool.holder[0] H=0 D=38.099998474121094
+  tool.holder[1] H=3.759200096130371 D=50.03799819946289
+  tool.holder[2] H=21.234399795532227 D=50.03799819946289
+  tool.holder[3] H=0 D=39.87799835205078
+  tool.holder[4] H=4.470399856567383 D=39.87799835205078
+  tool.holder[5] H=2.2860000133514404 D=44.45000076293945
+  tool.holder[6] H=10.795000076293945 D=44.45000076293945
+  tool.holder[7] H=1.2699999809265137 D=46.9900016784668
+  tool.holder[8] H=0 D=62.026798248291016
+  tool.holder[9] H=0.7620000243186951 D=63.55080032348633
+  tool.holder[10] H=3.683000087738037 D=63.55080032348633
+  tool.holder[11] H=2.0065999031066895 D=56.26100158691406
+  tool.holder[12] H=2.9972000122070312 D=56.26100158691406
+  tool.holder[13] H=2.0065999031066895 D=63.55080032348633
+  tool.holder[14] H=3.632200002670288 D=63.55080032348633
+  tool.holder[15] H=0.7620000243186951 D=62.026798248291016
+  tool.holder[16] H=0 D=44.45000076293945
+  tool.holder[17] H=3.174999952316284 D=44.45000076293945
+  STATE position=[54.600388, 120.377708, 15]
+  STATE spindleSpeed=8723.94
+  STATE radiusCompensation=RADIUS_COMPENSATION_OFF // off
+405: onRapid(54.60038757324219, 120.3777084350586, 15)
+406: onRapid(54.60038757324219, 120.3777084350586, 5)
+407: onMovement(MOVEMENT_LEAD_IN /*lead in*/)
+407: onLinear(54.60038757324219, 120.3777084350586, 2.5, 1000)
+408: onMovement(MOVEMENT_PLUNGE /*plunge*/)
+408: onLinear(54.60038757324219, 120.3777084350586, -4.300000190734863, 333.3330078125)
+409: onCircular(false, 54.49232864379883, 120.5459976196289, -4.400000095367432, 54.62189865112305, 120.39364624023438, -4.400000095367432, 333.3330078125)
+  direction: CCW
+  sweep: 7.675481deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.199998
+  helical pitch: 4.690256
+410: onCircular(false, 54.49232864379883, 120.5459976196289, -4.473205089569092, 54.667842864990234, 120.45011138916016, -4.473205089569092, 333.3330078125)
+  direction: CCW
+  sweep: 20.971406deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.199999
+  helical pitch: 1.256654
+411: onCircular(false, 54.49232864379883, 120.5459976196289, -4.5, 54.692325592041016, 120.5459976196289, -4.5, 333.3330078125)
+  direction: CCW
+  sweep: 28.648487deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.199997
+  helical pitch: 0.336708
+412: onMovement(MOVEMENT_CUTTING /*cutting*/)
+412: onCircular(false, 28.96141815185547, 120.5459976196289, -4.5, 54.60097122192383, 122.71235656738281, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 4.829613deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 25.730911
+413: onCircular(false, 37.32537078857422, 121.25269317626953, -4.5, 54.28366470336914, 124.85729217529297, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 7.170399deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 17.337153
+414: onCircular(false, 54.184627532958984, 124.83623504638672, -4.5, 54.0833740234375, 124.83623504638672, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 167.996608deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.101254
+415: onLinear(54.0833740234375, 94.25055694580078, -4.5, 837.030029296875)
+416: onCircular(false, 54.39873504638672, 94.25055694580078, -4.5, 54.2657585144043, 93.96460723876953, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 65.059938deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.315357
+417: onLinear(54.45391845703125, 93.8761215209961, -4.5, 837.030029296875)
+418: onCircular(false, 54.539058685302734, 94.05518341064453, -4.5, 54.737327575683594, 94.05518341064453, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 115.430122deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.198269
+419: onLinear(54.692325592041016, 120.5459976196289, -4.5, 837.030029296875)
+420: onMovement(MOVEMENT_LINK_TRANSITION /*transition*/)
+420: onCircular(true, 55.23760223388672, 120.54692840576172, -4.5, 55.02339172363281, 121.0483627319336, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 66.965846deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.545273
+421: onCircular(false, 54.81596374511719, 121.53392791748047, -4.5, 55.34343719482422, 121.55782318115234, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 69.462175deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.528014
+422: onMovement(MOVEMENT_CUTTING /*cutting*/)
+422: onCircular(false, 33.00426483154297, 120.5459976196289, -4.5, 54.936588287353516, 124.90899658203125, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 8.657607deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 22.362079
+423: onCircular(false, 34.71052551269531, 120.88542938232422, -4.5, 53.62900924682617, 129.09356689453125, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 12.203549deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 20.62238
+424: onCircular(false, 53.52391815185547, 129.0479736328125, -4.5, 53.409358978271484, 129.0479736328125, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 156.546623deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.114559
+425: onLinear(53.409358978271484, 93.98979949951172, -4.5, 837.030029296875)
+426: onCircular(false, 53.99228286743164, 93.98979949951172, -4.5, 53.75214767456055, 93.45863342285156, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 65.672721deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.582926
+427: onCircular(true, 44.024600982666016, 71.94200134277344, -4.5, 54.324161529541016, 93.19075775146484, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 1.532643deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 23.613356
+428: onCircular(false, 54.6531982421875, 93.86959075927734, -4.5, 54.98223876953125, 93.19075775146484, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 51.720065deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.754375
+429: onLinear(55.067466735839844, 93.23185729980469, -4.5, 837.030029296875)
+430: onCircular(false, 54.80532455444336, 93.77824401855469, -4.5, 55.41134262084961, 93.77824401855469, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 64.369516deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.606018
+431: onLinear(55.36634063720703, 120.5459976196289, -4.5, 837.030029296875)
+432: onCircular(false, 33.00426483154297, 120.5459976196289, -4.5, 55.34343719482422, 121.55782318115234, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 2.59337deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 22.362075
+433: onMovement(MOVEMENT_LINK_TRANSITION /*transition*/)
+433: onCircular(true, 56.21968460083008, 121.5975112915039, -4.5, 55.83440399169922, 122.38550567626953, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 66.537562deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.877141
+434: onCircular(false, 55.4690055847168, 123.13284301757812, -4.5, 56.29515075683594, 123.23039245605469, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 70.678613deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.831884
+435: onMovement(MOVEMENT_CUTTING /*cutting*/)
+435: onCircular(false, 33.56021499633789, 120.5459976196289, -4.5, 55.46657180786133, 127.19391632080078, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 10.147523deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 22.892866
+436: onCircular(false, 34.30738830566406, 120.77274322509766, -4.5, 52.56025695800781, 133.2537384033203, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 17.482185deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 22.112043
+437: onCircular(false, 52.45280075073242, 133.1802520751953, -4.5, 52.3226203918457, 133.1802520751953, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 145.632855deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.13018
+438: onLinear(52.3226203918457, 93.25715637207031, -4.5, 837.030029296875)
+439: onCircular(false, 52.875885009765625, 93.25715637207031, -4.5, 52.66370391845703, 92.7461929321289, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 67.448995deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.553267
+440: onCircular(true, 44.024600982666016, 71.94200134277344, -4.5, 54.274112701416016, 92.00181579589844, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 4.513597deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 22.526621
+441: onCircular(false, 54.6531982421875, 92.74374389648438, -4.5, 55.03228759765625, 92.00181579589844, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 54.129434deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.833166
+442: onCircular(true, 65.28179931640625, 71.94200134277344, -4.5, 56.15583801269531, 92.53727722167969, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 3.166062deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 22.526619
+443: onCircular(false, 55.92276382446289, 93.06326293945312, -4.5, 56.498077392578125, 93.06326293945312, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 66.100965deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.575314
+444: onLinear(56.45307922363281, 120.5459976196289, -4.5, 837.030029296875)
+445: onCircular(false, 33.56021499633789, 120.5459976196289, -4.5, 56.29515075683594, 123.23039245605469, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 6.733939deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 22.892865
+446: onMovement(MOVEMENT_LINK_TRANSITION /*transition*/)
+446: onCircular(true, 57.23716735839844, 123.34161376953125, -4.5, 56.7602424621582, 124.16156005859375, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 66.548995deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.948562
+447: onCircular(false, 56.30842590332031, 124.93833923339844, -4.5, 57.19064712524414, 125.10926818847656, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 70.780523deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.898627
+448: onMovement(MOVEMENT_CUTTING /*cutting*/)
+448: onCircular(false, 33.63777160644531, 120.5459976196289, -4.5, 56.02986145019531, 129.15736389160156, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 10.070371deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 23.990859
+449: onCircular(false, 34.39738464355469, 120.83812713623047, -4.5, 51.39804458618164, 136.5909423828125, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 21.782869deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 23.177006
+450: onCircular(false, 51.291847229003906, 136.49253845214844, -4.5, 51.14706802368164, 136.49253845214844, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 137.181387deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.144779
+451: onLinear(51.14706802368164, 92.43514251708984, -4.5, 837.030029296875)
+452: onCircular(false, 51.668212890625, 92.43514251708984, -4.5, 51.48609161376953, 91.94686126708984, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 69.545271deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.52114
+453: onCircular(true, 44.024600982666016, 71.94200134277344, -4.5, 54.2967529296875, 90.65966796875, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 8.303031deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 21.351069
+454: onCircular(false, 54.6531982421875, 91.3091812133789, -4.5, 55.009647369384766, 90.65966796875, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 57.515194deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.740894
+455: onCircular(true, 65.28179931640625, 71.94200134277344, -4.5, 57.33335876464844, 91.7584228515625, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 6.901832deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 21.351072
+456: onCircular(false, 57.131561279296875, 92.26152801513672, -4.5, 57.67362976074219, 92.26152801513672, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 68.144082deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.542068
+457: onLinear(57.628631591796875, 120.5459976196289, -4.5, 837.030029296875)
+458: onCircular(false, 33.63777160644531, 120.5459976196289, -4.5, 57.19064712524414, 125.10926818847656, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 10.964964deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 23.99086
+459: onMovement(MOVEMENT_LINK_TRANSITION /*transition*/)
+459: onCircular(true, 58.17290496826172, 125.29957580566406, -4.5, 57.60703659057617, 126.12471008300781, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 66.523006deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.000527
+460: onCircular(false, 57.071319580078125, 126.9058837890625, -4.5, 57.98518753051758, 127.1550064086914, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 70.806725deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.947215
+461: onMovement(MOVEMENT_CUTTING /*cutting*/)
+461: onCircular(false, 33.7410888671875, 120.5459976196289, -4.5, 56.60307693481445, 130.9759979248047, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 9.274742deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 25.128776
+462: onCircular(false, 34.269805908203125, 120.7872085571289, -4.5, 50.167747497558594, 139.49127197265625, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 25.113157deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 24.547638
+463: onCircular(false, 50.06480026245117, 139.37014770507812, -4.5, 49.90583801269531, 139.37014770507812, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 130.362232deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.158962
+464: onLinear(49.90583801269531, 91.5297622680664, -4.5, 837.030029296875)
+465: onCircular(false, 50.39301681518555, 91.5297622680664, -4.5, 50.24238586425781, 91.06645202636719, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 71.989673deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.487182
+466: onCircular(true, 44.024600982666016, 71.94200134277344, -4.5, 54.3209114074707, 89.21601104736328, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 12.786893deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 20.109834
+467: onCircular(false, 54.6531982421875, 89.77349090576172, -4.5, 54.98548889160156, 89.21601104736328, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 61.594548deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.649
+468: onCircular(true, 65.28179931640625, 71.94200134277344, -4.5, 58.57695388793945, 90.90118408203125, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 11.321437deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 20.109837
+469: onCircular(false, 58.40793991088867, 91.37909698486328, -4.5, 58.91486358642578, 91.37909698486328, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 70.523851deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.506924
+470: onLinear(58.86986541748047, 120.5459976196289, -4.5, 837.030029296875)
+471: onCircular(false, 33.7410888671875, 120.5459976196289, -4.5, 57.98518753051758, 127.1550064086914, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 15.24848deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 25.128775
+472: onMovement(MOVEMENT_LINK_TRANSITION /*transition*/)
+472: onCircular(true, 58.98832702636719, 127.42845916748047, -4.5, 58.337196350097656, 128.23907470703125, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 66.474835deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.039745
+473: onCircular(false, 57.72106170654297, 129.00611877441406, -4.5, 58.64809799194336, 129.3356475830078, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 70.795045deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.983863
+474: onMovement(MOVEMENT_CUTTING /*cutting*/)
+474: onCircular(false, 33.9202995300293, 120.5459976196289, -4.5, 48.883182525634766, 142.1060028076172, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 35.670849deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 26.243508
+475: onCircular(false, 48.78487014770508, 141.96368408203125, -4.5, 48.61188888549805, 141.96368408203125, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 124.636336deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.172981
+476: onLinear(48.61188888549805, 90.53901672363281, -4.5, 837.030029296875)
+477: onCircular(false, 49.063602447509766, 90.53901672363281, -4.5, 48.94546890258789, 90.10302734375, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 74.839432deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.45171
+478: onCircular(true, 44.024600982666016, 71.94200134277344, -4.5, 54.34645080566406, 87.67404174804688, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 18.108327deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 18.815889
+479: onCircular(false, 54.6531982421875, 88.14157104492188, -4.5, 54.9599494934082, 87.67404174804688, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 66.538338deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.559178
+480: onCircular(true, 65.28179931640625, 71.94200134277344, -4.5, 59.873741149902344, 89.96395111083984, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 16.565487deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 18.815891
+481: onCircular(false, 59.738590240478516, 90.4143295288086, -4.5, 60.20880889892578, 90.4143295288086, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 73.296393deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.470219
+482: onLinear(60.16381072998047, 120.5459976196289, -4.5, 837.030029296875)
+483: onCircular(false, 33.9202995300293, 120.5459976196289, -4.5, 58.64809799194336, 129.3356475830078, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 19.568073deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 26.243513
+484: onMovement(MOVEMENT_LINK_TRANSITION /*transition*/)
+484: onCircular(true, 59.66512680053711, 129.6971435546875, -4.5, 58.928985595703125, 130.48654174804688, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 66.56681deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.079376
+485: onCircular(false, 58.23114013671875, 131.23484802246094, -4.5, 59.16771697998047, 131.64691162109375, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 70.746366deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.023217
+486: onMovement(MOVEMENT_CUTTING /*cutting*/)
+486: onCircular(false, 33.93598175048828, 120.5459976196289, -4.5, 47.55305099487305, 144.51361083984375, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 36.649665deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 27.565759
+487: onCircular(false, 47.461055755615234, 144.35069274902344, -4.5, 47.273963928222656, 144.35069274902344, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 119.452189deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.187092
+488: onLinear(47.273963928222656, 89.4556884765625, -4.5, 837.030029296875)
+489: onCircular(false, 47.68891525268555, 89.4556884765625, -4.5, 47.60393524169922, 89.04953002929688, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 78.182552deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.414953
+490: onCircular(true, 44.024600982666016, 71.94200134277344, -4.5, 54.37336349487305, 86.0268325805664, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 24.489127deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 17.477968
+491: onCircular(false, 54.6531982421875, 86.4076919555664, -4.5, 54.93303680419922, 86.0268325805664, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 72.613216deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.472613
+492: onCircular(true, 65.28179931640625, 71.94200134277344, -4.5, 61.21510696411133, 88.94026947021484, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 22.85177deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 17.477961
+493: onCircular(false, 61.11454772949219, 89.360595703125, -4.5, 61.54673385620117, 89.360595703125, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 76.545397deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.432186
+494: onLinear(61.50173568725586, 120.5459976196289, -4.5, 837.030029296875)
+495: onCircular(false, 33.93598175048828, 120.5459976196289, -4.5, 59.16771697998047, 131.64691162109375, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 23.747498deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 27.565753
+496: onMovement(MOVEMENT_LINK_TRANSITION /*transition*/)
+496: onCircular(true, 60.1834831237793, 132.09381103515625, -4.5, 59.36974334716797, 132.8483428955078, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 66.585618deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.109726
+497: onCircular(false, 58.59749221801758, 133.5644073486328, -4.5, 59.528751373291016, 134.05621337890625, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 70.676927deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.053146
+498: onMovement(MOVEMENT_CUTTING /*cutting*/)
+498: onCircular(false, 33.94682693481445, 120.5459976196289, -4.5, 46.18436813354492, 146.7605743408203, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 37.136561deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 28.930286
+499: onCircular(false, 46.09988021850586, 146.577880859375, -4.5, 45.898597717285156, 146.577880859375, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 114.818521deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.201283
+500: onLinear(45.898597717285156, 88.26715850830078, -4.5, 837.030029296875)
+501: onCircular(false, 46.2756233215332, 88.26715850830078, -4.5, 46.22412109375, 87.89366912841797, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 82.148726deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.377024
+502: onCircular(true, 44.024600982666016, 71.94200134277344, -4.5, 54.401771545410156, 84.25492095947266, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 32.272948deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 16.102598
+503: onCircular(false, 54.6531982421875, 84.55325317382812, -4.5, 54.90462875366211, 84.25492095947266, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 80.247079deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.390153
+504: onCircular(true, 65.28179931640625, 71.94200134277344, -4.5, 62.59470748901367, 87.81880950927734, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 30.517687deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 16.102593
+505: onCircular(false, 62.52913284301758, 88.2062759399414, -4.5, 62.92210388183594, 88.2062759399414, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 80.394307deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.392971
+506: onLinear(62.87710189819336, 120.5459976196289, -4.5, 837.030029296875)
+507: onCircular(false, 33.94682693481445, 120.5459976196289, -4.5, 59.528751373291016, 134.05621337890625, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 27.839237deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 28.930275
+508: onMovement(MOVEMENT_LINK_TRANSITION /*transition*/)
+508: onCircular(true, 60.533363342285156, 134.58676147460938, -4.5, 59.64753723144531, 135.2981414794922, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 66.60598deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.136112
+509: onCircular(false, 58.805843353271484, 135.97406005859375, -4.5, 59.72297668457031, 136.54344177246094, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 70.599206deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.079504
+510: onMovement(MOVEMENT_CUTTING /*cutting*/)
+510: onCircular(false, 33.954795837402344, 120.5459976196289, -4.5, 44.78254699707031, 148.87754821777344, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 37.25124deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 30.330133
+511: onCircular(false, 44.706275939941406, 148.67599487304688, -4.5, 44.49076843261719, 148.67599487304688, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 110.727456deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.215508
+512: onLinear(44.49076843261719, 86.95326232910156, -4.5, 837.030029296875)
+513: onCircular(false, 44.82878494262695, 86.95326232910156, -4.5, 44.81070327758789, 86.61572265625, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 86.933653deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.338024
+514: onCircular(true, 44.024600982666016, 71.94200134277344, -4.5, 54.43202590942383, 82.31608581542969, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 42.025397deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 14.694765
+515: onCircular(false, 54.6531982421875, 82.53656005859375, -4.5, 54.87437438964844, 82.31608581542969, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90.181623deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.312294
+516: onCircular(true, 65.28179931640625, 71.94200134277344, -4.5, 64.00785827636719, 86.5814437866211, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 40.118506deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 14.694768
+517: onCircular(false, 63.9772834777832, 86.9327621459961, -4.5, 64.3299331665039, 86.9327621459961, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 85.026152deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.35265
+518: onLinear(64.2849349975586, 120.5459976196289, -4.5, 837.030029296875)
+519: onCircular(false, 33.954795837402344, 120.5459976196289, -4.5, 59.72297668457031, 136.54344177246094, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 31.832905deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 30.33014
+520: onMovement(MOVEMENT_LINK_TRANSITION /*transition*/)
+520: onCircular(true, 60.70783996582031, 137.1548614501953, -4.5, 59.75587463378906, 137.81634521484375, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 66.626643deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.159223
+521: onCircular(false, 58.850154876708984, 138.4456787109375, -4.5, 59.74555206298828, 139.08963012695312, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 70.516173deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.10291
+522: onMovement(MOVEMENT_CUTTING /*cutting*/)
+522: onCircular(false, 33.96083068847656, 120.5459976196289, -4.5, 43.352210998535156, 150.88607788085938, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 37.078158deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 31.760329
+523: onCircular(false, 43.284332275390625, 150.6665496826172, -4.5, 43.05455017089844, 150.6665496826172, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 107.181753deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.229782
+524: onLinear(43.05455017089844, 85.5198974609375, -4.5, 837.030029296875)
+525: onCircular(false, 43.373897552490234, 85.5198974609375, -4.5, 43.373897552490234, 85.20054626464844, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.319351
+526: onCircular(false, 43.373897552490234, 90.41108703613281, -4.5, 43.699249267578125, 85.2107162475586, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 3.57994deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 5.210538
+527: onCircular(true, 44.024600982666016, 80.01034545898438, -4.5, 44.024600982666016, 85.22088623046875, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 3.57994deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 5.210541
+528: onCircular(true, 44.024600982666016, 71.99483489990234, -4.5, 54.464969635009766, 80.1143798828125, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 52.127553deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 13.226047
+529: onCircular(false, 54.6531982421875, 80.26171875, -4.5, 54.8414306640625, 80.1143798828125, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 103.895333deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.23904
+530: onCircular(true, 65.29239654541016, 71.93370819091797, -4.5, 65.28179931640625, 85.2057113647461, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 51.901583deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 13.272007
+531: onCircular(true, 65.28179931640625, 83.88501739501953, -4.5, 65.36430358886719, 85.203125, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 3.581641deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.320687
+532: onCircular(false, 65.4468002319336, 86.521240234375, -4.5, 65.4468002319336, 85.20054626464844, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 3.58129deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.320694
+533: onCircular(false, 65.4468002319336, 85.5198974609375, -4.5, 65.76615142822266, 85.5198974609375, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.319351
+534: onLinear(65.72115325927734, 120.5459976196289, -4.5, 837.030029296875)
+535: onCircular(false, 33.96083068847656, 120.5459976196289, -4.5, 59.74555206298828, 139.08963012695312, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 35.722606deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 31.760324
+536: onMovement(MOVEMENT_LINK_TRANSITION /*transition*/)
+536: onCircular(true, 60.690494537353516, 139.76919555664062, -4.5, 59.6921272277832, 140.36752319335938, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 66.656717deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.16393
+537: onCircular(false, 58.74041748046875, 140.93789672851562, -4.5, 59.59708786010742, 141.64300537109375, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 70.392deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.109532
+538: onMovement(MOVEMENT_CUTTING /*cutting*/)
+538: onCircular(false, 33.96550369262695, 120.5459976196289, -4.5, 41.914520263671875, 152.777587890625, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 36.688735deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 33.197323
+539: onCircular(false, 41.85697555541992, 152.54037475585938, -4.5, 41.612876892089844, 152.54037475585938, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 103.635776deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.244099
+540: onLinear(41.612876892089844, 84.0782241821289, -4.5, 837.030029296875)
+541: onCircular(false, 41.932228088378906, 84.0782241821289, -4.5, 41.932228088378906, 83.75887298583984, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.319351
+542: onCircular(false, 41.932228088378906, 108.09249114990234, -4.5, 42.97841262817383, 83.78137969970703, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 2.4641deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 24.333611
+543: onCircular(true, 44.024600982666016, 59.47026062011719, -4.5, 44.024600982666016, 83.80387878417969, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 2.464108deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 24.333618
+544: onCircular(true, 44.024600982666016, 72.0956802368164, -4.5, 50.15776824951172, 82.0689468383789, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 31.589883deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 11.708193
+545: onCircular(true, 43.8854866027832, 71.86946105957031, -4.5, 54.50262451171875, 77.40547943115234, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 30.871557deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 11.973768
+546: onCircular(false, 54.6531982421875, 77.48399353027344, -4.5, 54.803775787353516, 77.40547943115234, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 124.922557deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.169818
+547: onCircular(true, 65.42091369628906, 71.86946105957031, -4.5, 59.14863204956055, 82.0689468383789, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 30.871557deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 11.973764
+548: onCircular(true, 65.28179931640625, 72.0956802368164, -4.5, 65.28179931640625, 83.80387878417969, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 31.589883deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 11.708199
+549: onCircular(true, 65.28179931640625, 69.45152282714844, -4.5, 66.08513641357422, 83.78137969970703, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 3.208664deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 14.352357
+550: onCircular(false, 66.88847351074219, 98.1112289428711, -4.5, 66.88847351074219, 83.75887298583984, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 3.208666deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 14.352356
+551: onCircular(false, 66.88847351074219, 84.0782241821289, -4.5, 67.20782470703125, 84.0782241821289, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.319351
+552: onLinear(67.16282653808594, 120.5459976196289, -4.5, 837.030029296875)
+553: onCircular(false, 33.96550369262695, 120.5459976196289, -4.5, 59.59708786010742, 141.64300537109375, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 39.457331deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 33.197317
+554: onMovement(MOVEMENT_LEAD_OUT /*lead out*/)
+554: onCircular(false, 59.442813873291016, 141.51573181152344, -4.473205089569092, 59.517181396484375, 141.70140075683594, -4.473205089569092, 1000)
+  direction: CCW
+  sweep: 28.649924deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.200009
+  helical pitch: 0.336691
+555: onCircular(false, 59.442813873291016, 141.51573181152344, -4.400000095367432, 59.44580841064453, 141.71571350097656, -4.400000095367432, 1000)
+  direction: CCW
+  sweep: 20.970106deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.200004
+  helical pitch: 1.256732
+556: onCircular(false, 59.442813873291016, 141.51573181152344, -4.300000190734863, 59.419071197509766, 141.71432495117188, -4.300000190734863, 1000)
+  direction: CCW
+  sweep: 7.675487deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.200007
+  helical pitch: 4.690251
+557: onMovement(MOVEMENT_RAPID /*rapid*/)
+557: onRapid(59.419071197509766, 141.71432495117188, 5)
+558: onRapid(54.48490524291992, 59.73072814941406, 5)
+559: onMovement(MOVEMENT_PLUNGE /*plunge*/)
+559: onLinear(54.48490524291992, 59.73072814941406, 2.5, 333.3330078125)
+560: onLinear(54.48490524291992, 59.73072814941406, -4.300000190734863, 333.3330078125)
+561: onCircular(false, 54.6531982421875, 59.83878707885742, -4.400000095367432, 54.50084686279297, 59.7092170715332, -4.400000095367432, 333.3330078125)
+  direction: CCW
+  sweep: 7.676071deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.199998
+  helical pitch: 4.689895
+562: onCircular(false, 54.6531982421875, 59.83878707885742, -4.473205089569092, 54.557315826416016, 59.663272857666016, -4.473205089569092, 333.3330078125)
+  direction: CCW
+  sweep: 20.972365deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.199997
+  helical pitch: 1.256596
+563: onCircular(false, 54.6531982421875, 59.83878707885742, -4.5, 54.6531982421875, 59.638790130615234, -4.5, 333.3330078125)
+  direction: CCW
+  sweep: 28.647528deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.199997
+  helical pitch: 0.336719
+564: onMovement(MOVEMENT_CUTTING /*cutting*/)
+564: onCircular(false, 54.6531982421875, 60.47209548950195, -4.5, 55.4248161315918, 60.157440185546875, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 67.815032deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.833308
+565: onCircular(false, 54.66891098022461, 60.4656867980957, -4.5, 55.22316360473633, 61.065032958984375, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 69.423408deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.81634
+566: onCircular(true, 57.345069885253906, 63.35956954956055, -4.5, 55.0484504699707, 61.23991775512695, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 4.533156deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 3.125282
+567: onCircular(false, 51.07701873779297, 57.57449722290039, -4.5, 54.87668228149414, 61.41769027709961, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 2.620955deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 5.404403
+568: onCircular(false, 54.6531982421875, 61.191646575927734, -4.5, 54.429718017578125, 61.41769027709961, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 89.347021deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.317867
+569: onCircular(false, 58.2293815612793, 57.57449722290039, -4.5, 54.2579460144043, 61.23991775512695, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 2.620982deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 5.404406
+570: onCircular(true, 51.96133041381836, 63.35956954956055, -4.5, 54.08323669433594, 61.065032958984375, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 4.533109deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 3.125281
+571: onCircular(false, 54.637489318847656, 60.4656867980957, -4.5, 53.88158416748047, 60.157440185546875, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 69.423408deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.816339
+572: onCircular(false, 54.6531982421875, 60.47209548950195, -4.5, 54.6531982421875, 59.638790130615234, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 67.814933deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.833305
+573: onMovement(MOVEMENT_LINK_TRANSITION /*transition*/)
+573: onCircular(true, 54.6531982421875, 58.53933334350586, -4.5, 55.569664001464844, 59.146697998046875, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 56.466573deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.099455
+574: onCircular(false, 56.090171813964844, 59.49164962768555, -4.5, 56.609886169433594, 59.145511627197266, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 112.80247deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.624431
+575: onMovement(MOVEMENT_CUTTING /*cutting*/)
+575: onCircular(false, 54.6531982421875, 60.448699951171875, -4.5, 56.24937057495117, 62.17472839355469, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 80.90271deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 2.350945
+576: onCircular(true, 62.16145706176758, 68.56779479980469, -4.5, 55.51342010498047, 62.94394302368164, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 7.009145deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 8.707704
+577: onCircular(true, 76.90937042236328, 81.0436782836914, -4.5, 54.8414306640625, 63.76961898803711, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 2.176614deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 28.024759
+578: onCircular(false, 54.6531982421875, 63.62228012084961, -4.5, 54.464969635009766, 63.76961898803711, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 103.895333deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.239037
+579: onCircular(true, 32.39703369140625, 81.0436782836914, -4.5, 53.7929801940918, 62.94394302368164, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 2.176614deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 28.024756
+580: onCircular(true, 47.14494323730469, 68.56779479980469, -4.5, 53.057029724121094, 62.17472839355469, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 7.009145deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 8.707701
+581: onCircular(false, 54.6531982421875, 60.448699951171875, -4.5, 56.609886169433594, 59.145511627197266, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 193.574162deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 2.350942
+582: onMovement(MOVEMENT_LINK_TRANSITION /*transition*/)
+582: onCircular(true, 57.52619934082031, 58.53522872924805, -4.5, 57.616355895996094, 59.63247299194336, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 61.032824deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.100942
+583: onCircular(false, 57.67910385131836, 60.39615249633789, -4.5, 58.44524383544922, 60.38284683227539, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 93.702209deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.766256
+584: onMovement(MOVEMENT_CUTTING /*cutting*/)
+584: onCircular(false, 54.6531982421875, 60.448699951171875, -4.5, 57.22819137573242, 63.23318099975586, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 48.233309deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 3.792614
+585: onCircular(true, 64.36140441894531, 70.94672393798828, -4.5, 55.87615966796875, 64.75139617919922, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 11.104152deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 10.506258
+586: onCircular(true, 66.83070373535156, 72.7496337890625, -4.5, 54.803775787353516, 66.47852325439453, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 8.595742deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 13.563695
+587: onCircular(false, 54.6531982421875, 66.40000915527344, -4.5, 54.50262451171875, 66.47852325439453, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 124.922557deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.169814
+588: onCircular(true, 42.4756965637207, 72.7496337890625, -4.5, 53.430240631103516, 64.75139617919922, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 8.595742deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 13.563696
+589: onCircular(true, 44.94499588012695, 70.94672393798828, -4.5, 52.078208923339844, 63.23318099975586, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 11.104152deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 10.506259
+590: onCircular(false, 54.6531982421875, 60.448699951171875, -4.5, 58.44524383544922, 60.38284683227539, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 226.243541deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 3.792617
+591: onMovement(MOVEMENT_LINK_TRANSITION /*transition*/)
+591: onCircular(true, 59.4488639831543, 60.36541748046875, -4.5, 59.011375427246094, 61.268836975097656, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 63.166094deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.003774
+592: onCircular(false, 58.67188262939453, 61.96989440917969, -4.5, 59.40037155151367, 62.24565124511719, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 84.894324deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.778934
+593: onMovement(MOVEMENT_CUTTING /*cutting*/)
+593: onCircular(false, 54.6531982421875, 60.448699951171875, -4.5, 58.09947204589844, 64.17534637451172, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 26.50522deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 5.075894
+594: onCircular(true, 65.28179931640625, 71.94200134277344, -4.5, 65.28179931640625, 82.52059936523438, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 137.238445deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 10.578598
+595: onCircular(true, 65.28179931640625, 34.983760833740234, -4.5, 66.7295150756836, 82.49855041503906, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 1.74519deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 47.53684
+596: onCircular(false, 68.17723846435547, 130.01333618164062, -4.5, 68.17723846435547, 82.47650146484375, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 1.7452deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 47.536835
+597: onCircular(false, 68.17723846435547, 82.78946685791016, -4.5, 68.49019622802734, 82.78946685791016, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.312958
+598: onLinear(68.44609832763672, 120.5459976196289, -4.5, 837.030029296875)
+599: onCircular(false, 33.96997833251953, 120.5459976196289, -4.5, 40.63083267211914, 154.37255859375, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 78.860295deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 34.476125
+600: onCircular(false, 40.58205032348633, 154.1257781982422, -4.5, 40.330501556396484, 154.1257781982422, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 101.181794deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.251549
+601: onLinear(40.330501556396484, 82.78946685791016, -4.5, 837.030029296875)
+602: onCircular(false, 40.643463134765625, 82.78946685791016, -4.5, 40.643463134765625, 82.47650146484375, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.312965
+603: onCircular(false, 40.643463134765625, 147.29527282714844, -4.5, 42.33403015136719, 82.49855041503906, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 1.494526deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 64.818772
+604: onCircular(true, 44.024600982666016, 17.701833724975586, -4.5, 44.024600982666016, 82.52059936523438, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 1.494529deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 64.818766
+605: onCircular(true, 44.024600982666016, 71.94200134277344, -4.5, 51.20692825317383, 64.17534637451172, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 137.238445deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 10.578599
+606: onCircular(false, 54.6531982421875, 60.448699951171875, -4.5, 59.40037155151367, 62.24565124511719, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 247.971647deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 5.075893
+607: onMovement(MOVEMENT_LINK_TRANSITION /*transition*/)
+607: onCircular(true, 60.36016082763672, 62.60895919799805, -4.5, 59.61266326904297, 63.3121223449707, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 63.982599deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.026251
+608: onCircular(false, 59.006103515625, 63.88270950317383, -4.5, 59.65990447998047, 64.39849090576172, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 81.519426deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.832758
+609: onMovement(MOVEMENT_CUTTING /*cutting*/)
+609: onCircular(false, 54.6531982421875, 60.448699951171875, -4.5, 58.98295211791992, 65.13070678710938, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 8.968535deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 6.377143
+610: onCircular(true, 65.28179931640625, 71.94200134277344, -4.5, 65.28179931640625, 81.21935272216797, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 137.23843deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 9.277351
+611: onLinear(69.02469635009766, 81.21935272216797, -4.5, 837.030029296875)
+612: onCircular(false, 69.02469635009766, 81.94200134277344, -4.5, 69.74735260009766, 81.94200134277344, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.722656
+613: onLinear(69.74735260009766, 120.5459976196289, -4.5, 837.030029296875)
+614: onCircular(false, 33.97175598144531, 120.5459976196289, -4.5, 39.33723449707031, 155.91696166992188, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 81.374469deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 35.775599
+615: onCircular(false, 39.29764175415039, 155.6505889892578, -4.5, 39.028350830078125, 155.6505889892578, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 98.454355deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.269291
+616: onLinear(39.028350830078125, 81.49369812011719, -4.5, 837.030029296875)
+617: onCircular(false, 39.34769821166992, 81.49369812011719, -4.5, 39.34769821166992, 81.17434692382812, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.319351
+618: onCircular(false, 39.34769821166992, 202.70449829101562, -4.5, 41.68614959716797, 81.19684600830078, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 1.102538deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 121.530152
+619: onCircular(true, 44.024600982666016, -40.310794830322266, -4.5, 44.024600982666016, 81.21935272216797, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 1.102539deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 121.530148
+620: onCircular(true, 44.024600982666016, 71.94200134277344, -4.5, 50.32344436645508, 65.13070678710938, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 137.238447deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 9.277347
+621: onCircular(false, 54.6531982421875, 60.448699951171875, -4.5, 59.65990447998047, 64.39849090576172, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 265.508357deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 6.377143
+622: onMovement(MOVEMENT_LINK_TRANSITION /*transition*/)
+622: onCircular(true, 60.66963577270508, 65.19507598876953, -4.5, 59.48677444458008, 65.69998931884766, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 61.385771deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.286118
+623: onCircular(false, 58.32587432861328, 66.1955337524414, -4.5, 59.29899597167969, 66.99945831298828, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 62.676925deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.262244
+624: onMovement(MOVEMENT_CUTTING /*cutting*/)
+624: onCircular(true, 65.28179931640625, 71.94200134277344, -4.5, 65.28179931640625, 79.70232391357422, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 129.560961deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 7.760323
+625: onLinear(69.02469635009766, 79.70232391357422, -4.5, 837.030029296875)
+626: onCircular(false, 69.02469635009766, 81.94200134277344, -4.5, 71.26437377929688, 81.94200134277344, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 2.239677
+627: onLinear(71.26437377929688, 120.5459976196289, -4.5, 837.030029296875)
+628: onCircular(false, 33.974464416503906, 120.5459976196289, -4.5, 37.823673248291016, 157.63670349121094, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 84.075153deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 37.289903
+629: onCircular(false, 37.79533386230469, 157.3541259765625, -4.5, 37.51132583618164, 157.3541259765625, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 95.726981deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.284008
+630: onLinear(37.51132583618164, 79.97667694091797, -4.5, 837.030029296875)
+631: onCircular(false, 37.8306770324707, 79.97667694091797, -4.5, 37.8306770324707, 79.6573257446289, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.319351
+632: onCircular(false, 37.8306770324707, 292.8056335449219, -4.5, 40.92763900756836, 79.67982482910156, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 0.832515deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 213.148309
+633: onCircular(true, 44.024600982666016, -133.44598388671875, -4.5, 44.024600982666016, 79.70232391357422, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 0.832515deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 213.148308
+634: onCircular(true, 44.024600982666016, 71.94200134277344, -4.5, 49.29346466064453, 66.24447631835938, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 137.238475deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 7.76033
+635: onCircular(false, 54.6531982421875, 60.448699951171875, -4.5, 60.012935638427734, 66.24447631835938, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 274.476817deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 7.894163
+636: onCircular(true, 65.28179931640625, 71.94200134277344, -4.5, 59.29899597167969, 66.99945831298828, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 7.677514deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 7.760327
+637: onMovement(MOVEMENT_LINK_TRANSITION /*transition*/)
+637: onCircular(true, 60.28728103637695, 67.81590270996094, -4.5, 59.19818115234375, 68.49203491210938, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 71.393605deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.28191
+638: onCircular(false, 57.70071029663086, 69.42168426513672, -4.5, 59.3732795715332, 69.97772979736328, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 50.22193deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.762576
+639: onMovement(MOVEMENT_CUTTING /*cutting*/)
+639: onCircular(true, 65.28179931640625, 71.94200134277344, -4.5, 65.28179931640625, 78.16847229003906, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 108.389248deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 6.226471
+640: onLinear(69.02469635009766, 78.16847229003906, -4.5, 837.030029296875)
+641: onCircular(false, 69.02469635009766, 81.94200134277344, -4.5, 72.79822540283203, 81.94200134277344, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 3.773529
+642: onLinear(72.79822540283203, 120.5459976196289, -4.5, 837.030029296875)
+643: onCircular(false, 33.976837158203125, 120.5459976196289, -4.5, 36.29325866699219, 159.2982177734375, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 86.579204deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 38.821391
+644: onCircular(false, 36.27620315551758, 158.99996948242188, -4.5, 35.977474212646484, 158.99996948242188, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 93.27293deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.298729
+645: onLinear(35.977474212646484, 78.44282531738281, -4.5, 837.030029296875)
+646: onCircular(false, 36.29682159423828, 78.44282531738281, -4.5, 36.29682159423828, 78.12347412109375, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.319351
+647: onCircular(false, 36.29682159423828, 409.90435791015625, -4.5, 40.16071319580078, 78.1459732055664, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 0.667277deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 331.780885
+648: onCircular(true, 44.024600982666016, -253.61241149902344, -4.5, 44.024600982666016, 78.16847229003906, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 0.667276deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 331.780884
+649: onCircular(true, 44.024600982666016, 71.94200134277344, -4.5, 48.25205612182617, 67.37061309814453, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 137.238463deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 6.226473
+650: onCircular(false, 54.6531982421875, 60.448699951171875, -4.5, 61.054344177246094, 67.37061309814453, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 274.476854deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 9.428019
+651: onCircular(true, 65.28179931640625, 71.94200134277344, -4.5, 59.3732795715332, 69.97772979736328, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 28.849215deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 6.226473
+652: onMovement(MOVEMENT_LINK_TRANSITION /*transition*/)
+652: onCircular(true, 60.612022399902344, 70.38954162597656, -4.5, 59.85124206542969, 71.4503402709961, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 72.741825deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.305404
+653: onCircular(false, 58.65408706665039, 73.11959838867188, -4.5, 60.676578521728516, 72.76024627685547, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 44.277693deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 2.054168
+654: onMovement(MOVEMENT_CUTTING /*cutting*/)
+654: onCircular(true, 65.28179931640625, 71.94200134277344, -4.5, 65.28179931640625, 76.61934661865234, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 79.924962deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 4.677345
+655: onLinear(69.02469635009766, 76.61934661865234, -4.5, 837.030029296875)
+656: onCircular(false, 69.02469635009766, 81.94200134277344, -4.5, 74.34735107421875, 81.94200134277344, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 5.322655
+657: onLinear(74.34735107421875, 120.5459976196289, -4.5, 837.030029296875)
+658: onCircular(false, 33.97882843017578, 120.5459976196289, -4.5, 34.74775314331055, 160.90719604492188, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 88.908585deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 40.368522
+659: onCircular(false, 34.741783142089844, 160.5938262939453, -4.5, 34.428348541259766, 160.5938262939453, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 91.091409deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.313435
+660: onLinear(34.428348541259766, 76.8936996459961, -4.5, 837.030029296875)
+661: onCircular(false, 34.74769973754883, 76.8936996459961, -4.5, 34.74769973754883, 76.57434844970703, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.319351
+662: onLinear(44.024600982666016, 76.61934661865234, -4.5, 837.030029296875)
+663: onCircular(true, 44.024600982666016, 71.94200134277344, -4.5, 47.200279235839844, 68.5079574584961, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 137.23848deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 4.677349
+664: onCircular(false, 54.6531982421875, 60.448699951171875, -4.5, 62.10612106323242, 68.5079574584961, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 274.47685deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 10.977144
+665: onCircular(true, 65.28179931640625, 71.94200134277344, -4.5, 60.676578521728516, 72.76024627685547, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 57.313518deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 4.677348
+666: onMovement(MOVEMENT_LINK_TRANSITION /*transition*/)
+666: onCircular(true, 61.992759704589844, 72.5263900756836, -4.5, 61.88691329956055, 73.8589859008789, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 75.383557deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.336793
+667: onCircular(false, 61.6539306640625, 76.79222869873047, -4.5, 63.4163703918457, 74.43595886230469, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 32.254332deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 2.942482
+668: onMovement(MOVEMENT_CUTTING /*cutting*/)
+668: onCircular(true, 65.28179931640625, 71.94200134277344, -4.5, 65.28179931640625, 75.05642700195312, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 36.795733deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 3.114426
+669: onLinear(69.02469635009766, 75.05642700195312, -4.5, 837.030029296875)
+670: onCircular(false, 69.02469635009766, 81.94200134277344, -4.5, 75.91027069091797, 81.94200134277344, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 6.885574
+671: onLinear(75.91027069091797, 120.5459976196289, -4.5, 837.030029296875)
+672: onCircular(false, 34.005943298339844, 120.5459976196289, -4.5, 34.02470016479492, 162.4503173828125, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 89.974354deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 41.904324
+673: onCircular(true, 34.02470016479492, 169.17613220214844, -4.5, 33.604740142822266, 162.46343994140625, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 3.579878deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 6.725816
+674: onCircular(false, 33.18478012084961, 155.75076293945312, -4.5, 33.18478012084961, 162.47657775878906, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 3.579886deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 6.725815
+675: onCircular(false, 33.18478012084961, 162.1572265625, -4.5, 32.86542892456055, 162.1572265625, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.319351
+676: onLinear(32.86542892456055, 75.33078002929688, -4.5, 837.030029296875)
+677: onCircular(false, 33.18478012084961, 75.33078002929688, -4.5, 33.18478012084961, 75.01142883300781, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.319351
+678: onLinear(44.024600982666016, 75.05642700195312, -4.5, 837.030029296875)
+679: onCircular(true, 44.024600982666016, 71.94200134277344, -4.5, 46.139137268066406, 69.65543365478516, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 137.238452deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 3.114427
+680: onCircular(false, 54.6531982421875, 60.448699951171875, -4.5, 63.16726303100586, 69.65543365478516, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 274.476878deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 12.540066
+681: onCircular(true, 65.28179931640625, 71.94200134277344, -4.5, 63.4163703918457, 74.43595886230469, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 100.442719deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 3.114426
+682: onMovement(MOVEMENT_LINK_TRANSITION /*transition*/)
+682: onCircular(true, 64.17059326171875, 73.4276123046875, -4.5, 65.15873718261719, 74.20811462402344, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 88.491702deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.259211
+683: onCircular(false, 66.7401351928711, 75.45719909667969, -4.5, 66.7401351928711, 73.44200134277344, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 51.696172deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 2.015198
+684: onMovement(MOVEMENT_CUTTING /*cutting*/)
+684: onLinear(69.02469635009766, 73.44200134277344, -4.5, 837.030029296875)
+685: onCircular(false, 69.02469635009766, 81.94200134277344, -4.5, 77.52469635009766, 81.94200134277344, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 8.5
+686: onLinear(77.52469635009766, 120.5459976196289, -4.5, 837.030029296875)
+687: onCircular(false, 34.02470016479492, 120.5459976196289, -4.5, 34.02470016479492, 164.04600524902344, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 90deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 43.500008
+688: onLinear(31.29599952697754, 164.04600524902344, -4.5, 837.030029296875)
+689: onLinear(31.29599952697754, 73.44200134277344, -4.5, 837.030029296875)
+690: onLinear(44.024600982666016, 73.44200134277344, -4.5, 837.030029296875)
+691: onCircular(true, 44.024600982666016, 71.94200134277344, -4.5, 45.04302215576172, 70.8407211303711, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 137.23855deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.5
+692: onCircular(false, 54.6531982421875, 60.448699951171875, -4.5, 64.26337432861328, 70.8407211303711, -4.5, 837.030029296875)
+  direction: CCW
+  sweep: 274.476871deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 14.15449
+693: onCircular(true, 65.28179931640625, 71.94200134277344, -4.5, 65.28179931640625, 73.44200134277344, -4.5, 837.030029296875)
+  direction: CW
+  sweep: 137.238443deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 1.5
+694: onLinear(66.7401351928711, 73.44200134277344, -4.5, 837.030029296875)
+695: onMovement(MOVEMENT_LEAD_OUT /*lead out*/)
+695: onCircular(false, 66.7401351928711, 73.64199829101562, -4.473205089569092, 66.83602142333984, 73.46648406982422, -4.473205089569092, 1000)
+  direction: CCW
+  sweep: 28.648487deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.199999
+  helical pitch: 0.336708
+696: onCircular(false, 66.7401351928711, 73.64199829101562, -4.400000095367432, 66.89248657226562, 73.5124282836914, -4.400000095367432, 1000)
+  direction: CCW
+  sweep: 20.971406deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.199998
+  helical pitch: 1.256654
+697: onCircular(false, 66.7401351928711, 73.64199829101562, -4.300000190734863, 66.90843200683594, 73.53394317626953, -4.300000190734863, 1000)
+  direction: CCW
+  sweep: 7.677581deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.199999
+  helical pitch: 4.688972
+698: onMovement(MOVEMENT_RAPID /*rapid*/)
+698: onRapid(66.90843200683594, 73.53394317626953, 15)
+699: onSectionEnd()
+  STATE position=[66.908432, 73.533943, 15]
+  STATE spindleSpeed=8723.94
+  STATE radiusCompensation=RADIUS_COMPENSATION_OFF // off
+699: onClose()
