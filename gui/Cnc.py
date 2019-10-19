@@ -2,6 +2,7 @@ import collections
 
 import math
 import numpy as np
+import serial
 
 from PyQt5.QtCore import QObject, pyqtSignal
 
@@ -14,9 +15,14 @@ class CNC(QObject):
         self.position = np.array([0, 0, 0])  # in machine units
         self.single_move_limit = 5000  # in machine units
 
+        self.serial = serial.Serial()
+        #self.serial.baudrate = 19200
+        #self.serial.port = "/dev/ttyUSB0"
+       # self.serial.open()
+
 
     def initialize(self):
-        command = "^s0;AP5000,5000,5000;CO790000,1024000,160000;VB200,200,200;RV2500,300;RF;SO1,0;SO2,0;"
+        command = "^s0;AP5000,5000,5000;CO790000,1024000,160000;VB200,200,200;RV2500,300;RF;SO1,0;SO2,0;EU3000,3000,3000;"
         self.__send(command)
 
     def __get_xyz_in_machine_units(self, x_mm, y_mm, z_mm):
@@ -93,7 +99,16 @@ class CNC(QObject):
         self.position = self.__get_xyz_in_machine_units(x_mm, y_mm, z_mm)
 
     def __send(self, command):
-        self.send_command.emit(command)
+
+        cmds = command.split(";")
+
+        for cmd in cmds:
+            self.send_command.emit(command + "OE;")
+          #  self.serial.write(cmd)
+          #  answer = self.serial.read() #should come instantly
+          #  answer = self.serial.read() #answer for OE
+          #  self.send_command.emit("answer " + answer)
+
 
     def __mark3d2d(self, positions):
         """

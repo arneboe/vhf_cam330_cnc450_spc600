@@ -1,17 +1,24 @@
 import math
+import sys
+
 from recordclass import recordclass
 import re
 
+# rapid move. X/Y/Z in mm
+G0 = recordclass('G0', 'X Y Z')
 # X/Y/Z in mm, F in mm/s
 G1 = recordclass('G1', 'X Y Z F')
 
-# cX/cY in mm, A in rad, F in mm/s
-G2 = recordclass('G2', 'cX cY A F')
+# arc absolut, center x/y in mm, angle in deg, F in mm/s
+GAA = recordclass('GAA', 'cX cY A F')
 
-# X/Y/Z in machine units (multiples of TODO !!)
+BEGIN_SECTION = recordclass('BEGIN_SECTION', '')
+END_SECTION = recordclass('END_SECTION', '')
+
+# X/Y/Z in machine units
 MA = recordclass('MA', 'X Y Z')
 
-# cX/cY in machine units, A in TODO (probably deg.deg?)
+# cX/cY in machine units, A in degree
 AA = recordclass('AA', 'cX cY A')
 
 # F in steps/second
@@ -20,26 +27,36 @@ EU = recordclass('EU', 'F')
 # X/Y in machine units
 PA = recordclass('PA', 'X Y')
 
+# Z in machine units
+ZA = recordclass('ZA', 'Z')
 
 class Converter:
 
-    def convert(self, path, params: {}):
+    def __init__(self, rapid_move_speed_mm):
+        """
+        :param rapid_move_speed_mm: rapid move speed in mm/s
+        """
+        self.rapid_move_speed_steps = self._convert_speed_to_machine(rapid_move_speed_mm)
+
+    def convert(self, path):
         """
         :param path: Path to input file
-        :param params: parameters for the conversion
-                - 'spindel_pitch' in um
-                - 'maximum_line_length' in machine units (depend in spindel_pitch)
-
         :return:
         """
         g_codes = self._load_file(path)
-        g_codes_in_machine = self._to_machine_coordinates(g_codes)
-        vhf_codes = self._to_machine_commands(g_codes_in_machine)
-        vhf_codes_opt_1 = self._remove_duplicate_speed_commands(vhf_codes)
-        vhf_codes_opt_2 = self._convert_MA_to_PA(vhf_codes_opt_1)
+        # g_codes_in_machine = self._to_machine_coordinates(g_codes)
+        vhf_codes = self._to_machine_commands(g_codes)
+        vhf_codes_with_lead_in = self._add_lead_in(vhf_codes)
+        vhf_codes_opt_1 = self._remove_duplicate_speed_commands(vhf_codes_with_lead_in)
+        vhf_codes_opt_2 = self._convert_MA_to_ZA(vhf_codes_opt_1)
+        vhf_codes_opt_3 = self._convert_MA_to_PA(vhf_codes_opt_2)
         # vhf_codes_opt_3 = self._convert_MA_to_ZA(vhf_codes_opt_2)
         # vhf_codes_opt_4 = self._combine_PA(vhf_codes_opt_3)
-        vhf_strings = self._convert_to_string(vhf_codes_opt_2)
+
+        # self._validate(vhf_codes_opt_2)
+
+        vhf_strings = self._convert_to_string(vhf_codes_opt_3)
+        return vhf_strings
 
     def _load_file(self, path):
         """
@@ -49,29 +66,36 @@ class Converter:
         """
         file = open(path, 'r')
         g_code = file.readlines()
+
+        if g_code[0] != "THIS_IS_VHF330_G_CODE_DIALECT\n":
+            raise RuntimeError("Unknown file format")
+
         result = []
-        for line in g_code:
+        for line in g_code[1:]:
             result.append(self._parse_g_code_line(line))
         return result
 
-    def _to_machine_coordinates(self, g_codes):
-        """
-        Convert coordinates in g_codes to machine coordinates.
-        :return: commands converted to machine coordinate system (but still in mm).
-        """
-        return [G1(10.0, 20.0, 1.0, 25.5), G2(11.0, 21.5, 1.425, 5.05)]
-
     def _to_machine_commands(self, g_codes):
         """
-        Converts g codes to vhf commands.
-        G1 -> EU & MA
-        G2 -> EU & AA
+        Converts g codes to vhf commands, converts units to machine units
         :return: vhf commands
         """
+        result = []
+        for g_code in g_codes:
+            if type(g_code) is G0:
+                result.extend(self._convert_G0_to_vhf(g_code))
+            elif type(g_code) is G1:
+                result.extend(self._convert_G1_to_vhf(g_code))
+            elif type(g_code) is GAA:
+                result.extend(self._convert_GAA_to_vhf(g_code))
+            elif type(BEGIN_SECTION):
+                result.append(BEGIN_SECTION())
+            elif type(END_SECTION):
+                result.append(END_SECTION)
+            else:
+                raise RuntimeError("Unknown g code: " + g_code)
+        return result
 
-        # Converts the units and inserts EU everywhere.
-        # No optimization is done whatsoever
-        return [EU(2040), MA(10000, 20000, 100), EU(2040), AA(11000, 21500, 1500)]
 
     def _remove_duplicate_speed_commands(self, vhf_codes):
         """
@@ -92,56 +116,65 @@ class Converter:
         """
         Replace MA with PA where possible (i.e. when only X and Y change)
         """
-        return [EU(2040), MA(10000, 20000, 100), PA(3000, 4000), AA(11000, 21500, 1500)]
+        current_z = sys.maxsize
 
-    def _convert_to_string(self, vhf_codes_opt_2):
+        for i, cmd in enumerate(vhf_codes):
+            if type(cmd) is ZA:
+                current_z = cmd.Z
+            elif type(cmd) is MA:
+                if current_z == cmd.Z:
+                    # this is a MA that does not change Z. replace with PA
+                    vhf_codes[i] = PA(cmd.X, cmd.Y)
+                else:
+                    # this is MA that also changes Z. keep and update tracking z
+                    current_z = cmd.Z
+        return vhf_codes
+
+
+    def _convert_to_string(self, vhf_codes):
         """
         Convert commands to strings
         :param vhf_codes_opt_2:
         :return:
         """
-        return ["EU2040;", "MA10000,20000,100;", "PA3000,4000;", "AA11000,21500,1500;"]
+        result = []
+
+        for cmd in vhf_codes:
+            if type(cmd) is MA:
+                result.append("MA" + str(cmd.X) + "," + str(cmd.Y) + "," + str(cmd.Z) + ";")
+            elif type(cmd) is PA:
+                result.append("PA" + str(cmd.X) + "," + str(cmd.Y) + ";")
+            elif type(cmd) is ZA:
+                result.append("ZA" + str(cmd.Z) + ";")
+            elif type(cmd) is AA:
+                result.append("AA" + str(cmd.cX) + "," + str(cmd.cY) + "," + str(cmd.A) + ";")
+            elif type(cmd) is EU:
+                result.append("EU" + str(cmd.F) + ";")
+            elif type(cmd) is BEGIN_SECTION:
+                pass
+            elif type(cmd) is END_SECTION:
+                pass
+            else:
+                raise RuntimeError("Uknown command: " + str(cmd))
+        return result
 
     def _parse_g_code_line(self, line):
-        splitted = line.split(" ")
 
+        if line.startswith("BEGIN_SECTION"):
+            return BEGIN_SECTION()
+        if line.startswith("END_SECTION"):
+            return END_SECTION()
+
+        splitted = line.split(" ")
         if len(splitted) == 0:
             raise RuntimeError("malformed G Code: " + line)
 
+        if splitted[0] == "G0":
+            return self._parse_G0(splitted)
         if splitted[0] == "G1":
-            if len(splitted) != 5:
-                raise RuntimeError("malformed G1 code: " + line)
-            g1 = G1(float('nan'), float('nan'), float('nan'), float('nan'))
-            for value in splitted[1:]:
-                if value.startswith("X"):
-                    g1.X = float(value[1:])
-                elif value.startswith("Y"):
-                    g1.Y = float(value[1:])
-                elif value.startswith("Z"):
-                    g1.Z = float(value[1:])
-                elif value.startswith("F"):
-                    g1.F = float(value[1:])
-                else:
-                    raise RuntimeError("unknown G1 code element: '" + value + "' in line: " + line)
-            self._check_not_nan(g1)
-            return g1
-        elif splitted[0] == G2:
-            if len(splitted) != 5:
-                raise RuntimeError("malformed G2 code: " + line)
-            g2 = G2(float('nan'), float('nan'), float('nan'), float('nan'))
-            for value in splitted[1:]:
-                if value.startswith("cX"):
-                    g2.cX = float(value[2:])
-                elif value.startswith("cY"):
-                    g2.cY = float(value[2:])
-                elif value.startswith("A"):
-                    g2.A = float(value[1:])
-                elif value.startswith("F"):
-                    g2.F = float(value[1:])
-                else:
-                    raise RuntimeError("unknown G1 code element: '" + value + "' in line: " + line)
-            self._check_not_nan(g2)
-            return g2
+            return self._parse_G1(splitted)
+        if splitted[0] == "GAA":
+            return self._parse_GAA(splitted)
         else:
             raise RuntimeError("unknown G Code: " + line)
 
@@ -149,3 +182,149 @@ class Converter:
         for x in value:
             if math.isnan(x):
                 raise RuntimeError("Value is NaN")
+
+    def _parse_G0(self, splitted):
+        if len(splitted) != 4:
+            raise RuntimeError("malformed G0 code: " + str(splitted))
+        g0 = G0(float('nan'), float('nan'), float('nan'))
+        for value in splitted[1:]:
+            if value.startswith("X"):
+                g0.X = float(value[1:])
+            elif value.startswith("Y"):
+                g0.Y = float(value[1:])
+            elif value.startswith("Z"):
+                g0.Z = float(value[1:])
+            else:
+                raise RuntimeError("unknown G0 code element: '" + value + "' in line: " + splitted)
+        self._check_not_nan(g0)
+        return g0
+
+    def _parse_G1(self, splitted):
+        if len(splitted) != 5:
+            raise RuntimeError("malformed G1 code: " + splitted)
+        g1 = G1(float('nan'), float('nan'), float('nan'), float('nan'))
+        for value in splitted[1:]:
+            if value.startswith("X"):
+                g1.X = float(value[1:])
+            elif value.startswith("Y"):
+                g1.Y = float(value[1:])
+            elif value.startswith("Z"):
+                g1.Z = float(value[1:])
+            elif value.startswith("F"):
+                g1.F = float(value[1:])
+            else:
+                raise RuntimeError("unknown G1 code element: '" + value + "' in line: " + splitted)
+        self._check_not_nan(g1)
+        return g1
+
+    def _parse_GAA(self, splitted):
+        if len(splitted) != 5:
+            raise RuntimeError("malformed G2 code: " + splitted)
+        g2 = GAA(float('nan'), float('nan'), float('nan'), float('nan'))
+        for value in splitted[1:]:
+            if value.startswith("cX"):
+                g2.cX = float(value[2:])
+            elif value.startswith("cY"):
+                g2.cY = float(value[2:])
+            elif value.startswith("A"):
+                g2.A = float(value[1:])
+            elif value.startswith("F"):
+                g2.F = float(value[1:])
+            else:
+                raise RuntimeError("unknown G1 code element: '" + value + "' in line: " + splitted)
+        self._check_not_nan(g2)
+        return g2
+
+    def _validate(self, vhf_codes_opt_2):
+        #TODO implement
+        # this method should to coordinate validation, check software endstops, etc.
+        # find all kinds of mistakes before they break the cnc :D
+        pass
+
+    def _add_lead_in(self, vhf_codes):
+        target_x = float('nan')
+        target_y = float('nan')
+        target_z = float('nan')
+
+        for cmd in vhf_codes:
+            if type(cmd) is MA:
+                if math.isnan(target_x):
+                    target_x = cmd.X
+                if math.isnan(target_y):
+                    target_y = cmd.Y
+                target_z = cmd.Z
+                break
+            elif type(cmd) is PA:
+                target_x = cmd.X
+                target_y = cmd.Y
+            elif type(cmd) is BEGIN_SECTION or EU:
+                continue
+            else:
+                raise RuntimeError("Encounterd '" + str(cmd) + "' before all coordinates where known.")
+
+        vhf_codes.insert(0, ZA(target_z))
+        vhf_codes.insert(0, PA(target_x, target_y))
+        vhf_codes.insert(0, ZA(0))
+        vhf_codes.insert(0, EU(self.rapid_move_speed_steps))
+
+        # todo in theroy we could remove the first  command now?!
+
+        return vhf_codes
+
+    def _convert_G0_to_vhf(self, g_code):
+        result = []
+        result.append(EU(self.rapid_move_speed_steps))
+        x = self._convert_mm_to_machine(g_code.X)
+        y = self._convert_mm_to_machine(g_code.Y)
+        z = self._convert_mm_to_machine(g_code.Z)
+        result.append(MA(x, y, z))
+        return result
+
+    def _convert_G1_to_vhf(self, g_code):
+        result = []
+        f = self._convert_speed_to_machine(g_code.F)
+        result.append(EU(f))
+        x = self._convert_mm_to_machine(g_code.X)
+        y = self._convert_mm_to_machine(g_code.Y)
+        z = self._convert_mm_to_machine(g_code.Z)
+        result.append(MA(x, y, z))
+        return result
+
+    def _convert_GAA_to_vhf(self, g_code):
+        result = []
+        f = self._convert_speed_to_machine(g_code.F)
+        result.append(EU(f))
+        cx = self._convert_mm_to_machine(g_code.cX)
+        cy = self._convert_mm_to_machine(g_code.cY)
+        result.append(AA(cx, cy, g_code.A))
+        return result
+
+    def _convert_speed_to_machine(self, rapid_move_speed_mm):
+        return 3042
+        # TODO implement correct conversion
+
+    def _convert_mm_to_machine(self, distance):
+        # converts distance from mm to machine units (micrometer)
+        return int(round(distance * 1000.0))
+
+    def _convert_MA_to_ZA(self, vhf_codes):
+        current_x = sys.maxsize
+        current_y = sys.maxsize
+
+        for i, cmd in enumerate(vhf_codes):
+            if type(cmd) is PA:
+                current_x = cmd.X
+                current_y = cmd.Y
+            elif type(cmd) is MA:
+                if cmd.X == current_x and cmd.Y == current_y:
+                    # this is a MA command that only affects the z axis, can be replaced by ZA
+                    vhf_codes[i] = ZA(cmd.Z)
+                else:
+                    # this is a MA that changes x/y, just update our tracking position
+                    current_x = cmd.X
+                    current_y = cmd.Y
+
+        return vhf_codes
+
+
+
