@@ -6,18 +6,18 @@ from Converter import Converter, G0, EU
 
 
 def test_to_machine():
-    c = Converter(rapid_move_speed_mm=5042)
+    c = Converter(rapid_move_speed_mm_min=1500)
     result = c.convert("/home/arne/vhf_cam330_cnc450_spc600/test_vhf_cnc.cnc")
     print(result)
     f = open("/home/arne/cnc.txt", "w+")
 
-    for line in result:
+    for line in result[0]:
         f.write(line + "\n")
     f.close()
 
 
 def test_g_code_parser_G0():
-    c = Converter(rapid_move_speed_mm=5000)
+    c = Converter(rapid_move_speed_mm_min=1500)
     cmd = c._parse_g_code_line("G0 X1000.42 Y2000.44 Z3300")
     assert_true(type(cmd) is G0)
     assert_equals(cmd.X, 1000.42)
@@ -26,37 +26,37 @@ def test_g_code_parser_G0():
 
 @raises(RuntimeError)
 def test_g_code_parser_G0_2():
-    c = Converter(rapid_move_speed_mm=5000)
+    c = Converter(rapid_move_speed_mm_min=1500)
     cmd = c._parse_g_code_line("G0 X1000.42 Y2000.44")
 
 @raises(RuntimeError)
 def test_g_code_parser_G0_3():
-    c = Converter(rapid_move_speed_mm=5000)
+    c = Converter(rapid_move_speed_mm_min=1500)
     cmd = c._parse_g_code_line("G0 X1000.42 Z2000.44")
 
 @raises(RuntimeError)
 def test_g_code_parser_G0_4():
-    c = Converter(rapid_move_speed_mm=5000)
+    c = Converter(rapid_move_speed_mm_min=5000)
     cmd = c._parse_g_code_line("G0")
 
 @raises(ValueError)
 def test_g_code_parser_G0_5():
-    c = Converter(rapid_move_speed_mm=5000)
+    c = Converter(rapid_move_speed_mm_min=5000)
     cmd = c._parse_g_code_line("G0 X Y300 Z030")
 
 @raises(RuntimeError)
 def test_g_code_parser_G0_5():
-    c = Converter(rapid_move_speed_mm=5000)
+    c = Converter(rapid_move_speed_mm_min=5000)
     cmd = c._parse_g_code_line("G0 X1 X2 Z3 Y4")
 
 @raises(RuntimeError)
 def test_g_code_parser_G0_7():
-    c = Converter(rapid_move_speed_mm=5000)
+    c = Converter(rapid_move_speed_mm_min=5000)
     cmd = c._parse_g_code_line("G0 X1 X2 X3")
 
 
 def test_remove_duplicate_speed():
-    c = Converter(rapid_move_speed_mm=5000)
+    c = Converter(rapid_move_speed_mm_min=5000)
 
     cmds = [EU(10),EU(10),EU(10),EU(0), EU(20), EU(20), EU(10), EU(0), EU(42),EU(42),EU(3)]
     removed_cmds = c._remove_duplicate_speed_commands(cmds)

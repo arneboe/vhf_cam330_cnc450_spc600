@@ -30,13 +30,15 @@ PA = recordclass('PA', 'X Y')
 # Z in machine units
 ZA = recordclass('ZA', 'Z')
 
+Boundaries = recordclass("Boundaries", "min_z max_z")
+
 class Converter:
 
-    def __init__(self, rapid_move_speed_mm):
+    def __init__(self, rapid_move_speed_mm_min):
         """
-        :param rapid_move_speed_mm: rapid move speed in mm/s
+        :param rapid_move_speed_mm_min: rapid move speed in mm/min
         """
-        self.rapid_move_speed_steps = self._convert_speed_to_machine(rapid_move_speed_mm)
+        self.rapid_move_speed_steps = self._convert_speed_to_machine(rapid_move_speed_mm_min)
 
     def convert(self, path):
         """
@@ -53,10 +55,13 @@ class Converter:
         # vhf_codes_opt_3 = self._convert_MA_to_ZA(vhf_codes_opt_2)
         # vhf_codes_opt_4 = self._combine_PA(vhf_codes_opt_3)
 
-        # self._validate(vhf_codes_opt_2)
+        self._validate(vhf_codes_opt_2)
+
 
         vhf_strings = self._convert_to_string(vhf_codes_opt_3)
-        return vhf_strings
+        bounds = self._calculate_bounds(vhf_codes_opt_3)
+
+        return vhf_strings, bounds
 
     def _load_file(self, path):
         """
@@ -235,11 +240,19 @@ class Converter:
         self._check_not_nan(g2)
         return g2
 
-    def _validate(self, vhf_codes_opt_2):
+    def _validate(self, vhf_codes):
         #TODO implement
         # this method should to coordinate validation, check software endstops, etc.
         # find all kinds of mistakes before they break the cnc :D
-        pass
+
+        # check z
+        for cmd in vhf_codes:
+            if hasattr(cmd, "Z"):
+                if cmd.Z < 0:
+                    raise RuntimeError("Z Coordinates < 0 not allowed")
+
+
+
 
     def _add_lead_in(self, vhf_codes):
         target_x = float('nan')
@@ -299,9 +312,11 @@ class Converter:
         result.append(AA(cx, cy, g_code.A))
         return result
 
-    def _convert_speed_to_machine(self, rapid_move_speed_mm):
-        return 3042
-        # TODO implement correct conversion
+    def _convert_speed_to_machine(self, speed_mm_min):
+        mm_sec = speed_mm_min / 60.0
+        steps_sec = mm_sec * 80.0 # 1mm = 80 steps
+        return int(round(steps_sec))
+
 
     def _convert_mm_to_machine(self, distance):
         # converts distance from mm to machine units (micrometer)
@@ -325,6 +340,18 @@ class Converter:
                     current_y = cmd.Y
 
         return vhf_codes
+
+    def _calculate_bounds(self, vhf_codes):
+        bounds = Boundaries(min_z=99999999, max_z=-9999999999)
+        for cmd in vhf_codes:
+            if type(cmd) is MA:
+                bounds.min_z = min(bounds.min_z, cmd.Z)
+                bounds.max_z = max(bounds.max_z, cmd.Z)
+            elif type(cmd) is ZA:
+                bounds.min_z = min(bounds.min_z, cmd.Z)
+                bounds.max_z = max(bounds.max_z, cmd.Z)
+        return bounds
+
 
 
 
