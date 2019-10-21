@@ -1,36 +1,36 @@
 import math
 import sys
 
-from recordclass import recordclass
+from collections import namedtuple
 import re
 
 # rapid move. X/Y/Z in mm
-G0 = recordclass('G0', 'X Y Z')
+G0 = namedtuple('G0', 'X Y Z')
 # X/Y/Z in mm, F in mm/s
-G1 = recordclass('G1', 'X Y Z F')
+G1 = namedtuple('G1', 'X Y Z F')
 
 # arc absolut, center x/y in mm, angle in deg, F in mm/s
-GAA = recordclass('GAA', 'cX cY A F')
+GAA = namedtuple('GAA', 'cX cY A F')
 
-BEGIN_SECTION = recordclass('BEGIN_SECTION', '')
-END_SECTION = recordclass('END_SECTION', '')
+BEGIN_SECTION = namedtuple('BEGIN_SECTION', '')
+END_SECTION = namedtuple('END_SECTION', '')
 
 # X/Y/Z in machine units
-MA = recordclass('MA', 'X Y Z')
+MA = namedtuple('MA', 'X Y Z')
 
 # cX/cY in machine units, A in degree
-AA = recordclass('AA', 'cX cY A')
+AA = namedtuple('AA', 'cX cY A')
 
 # F in steps/second
-EU = recordclass('EU', 'F')
+EU = namedtuple('EU', 'F')
 
 # X/Y in machine units
-PA = recordclass('PA', 'X Y')
+PA = namedtuple('PA', 'X Y')
 
 # Z in machine units
-ZA = recordclass('ZA', 'Z')
+ZA = namedtuple('ZA', 'Z')
 
-Boundaries = recordclass("Boundaries", "min_z max_z")
+Boundaries = namedtuple("Boundaries", "min_z max_z")
 
 class Converter:
 
@@ -191,54 +191,66 @@ class Converter:
     def _parse_G0(self, splitted):
         if len(splitted) != 4:
             raise RuntimeError("malformed G0 code: " + str(splitted))
-        g0 = G0(float('nan'), float('nan'), float('nan'))
+        x = float('nan')
+        y = float('nan')
+        z = float('nan')
+
         for value in splitted[1:]:
             if value.startswith("X"):
-                g0.X = float(value[1:])
+                x = float(value[1:])
             elif value.startswith("Y"):
-                g0.Y = float(value[1:])
+                y = float(value[1:])
             elif value.startswith("Z"):
-                g0.Z = float(value[1:])
+                z = float(value[1:])
             else:
                 raise RuntimeError("unknown G0 code element: '" + value + "' in line: " + splitted)
+        g0 = G0(x, y, z)
         self._check_not_nan(g0)
         return g0
 
     def _parse_G1(self, splitted):
         if len(splitted) != 5:
             raise RuntimeError("malformed G1 code: " + splitted)
-        g1 = G1(float('nan'), float('nan'), float('nan'), float('nan'))
+        x = float('nan')
+        y = float('nan')
+        z = float('nan')
+        f = float('nan')
         for value in splitted[1:]:
             if value.startswith("X"):
-                g1.X = float(value[1:])
+                x = float(value[1:])
             elif value.startswith("Y"):
-                g1.Y = float(value[1:])
+                y = float(value[1:])
             elif value.startswith("Z"):
-                g1.Z = float(value[1:])
+                z = float(value[1:])
             elif value.startswith("F"):
-                g1.F = float(value[1:])
+                f = float(value[1:])
             else:
                 raise RuntimeError("unknown G1 code element: '" + value + "' in line: " + splitted)
+        g1 = G1(x, y, z, f)
         self._check_not_nan(g1)
         return g1
 
     def _parse_GAA(self, splitted):
         if len(splitted) != 5:
             raise RuntimeError("malformed G2 code: " + splitted)
-        g2 = GAA(float('nan'), float('nan'), float('nan'), float('nan'))
+        x = float('nan')
+        y = float('nan')
+        a = float('nan')
+        f = float('nan')
         for value in splitted[1:]:
             if value.startswith("cX"):
-                g2.cX = float(value[2:])
+                x = float(value[2:])
             elif value.startswith("cY"):
-                g2.cY = float(value[2:])
+                y = float(value[2:])
             elif value.startswith("A"):
-                g2.A = float(value[1:])
+                a = float(value[1:])
             elif value.startswith("F"):
-                g2.F = float(value[1:])
+                f = float(value[1:])
             else:
                 raise RuntimeError("unknown G1 code element: '" + value + "' in line: " + splitted)
-        self._check_not_nan(g2)
-        return g2
+        gaa = GAA(x, y, a, f)
+        self._check_not_nan(gaa)
+        return gaa
 
     def _validate(self, vhf_codes):
         #TODO implement
@@ -249,7 +261,8 @@ class Converter:
         for cmd in vhf_codes:
             if hasattr(cmd, "Z"):
                 if cmd.Z < 0:
-                    raise RuntimeError("Z Coordinates < 0 not allowed")
+                    #raise RuntimeError("Z Coordinates < 0 not allowed")
+                    pass
 
 
 
@@ -342,15 +355,16 @@ class Converter:
         return vhf_codes
 
     def _calculate_bounds(self, vhf_codes):
-        bounds = Boundaries(min_z=99999999, max_z=-9999999999)
+        min_z=99999999
+        max_z=-9999999999
         for cmd in vhf_codes:
             if type(cmd) is MA:
-                bounds.min_z = min(bounds.min_z, cmd.Z)
-                bounds.max_z = max(bounds.max_z, cmd.Z)
+                min_z = min(min_z, cmd.Z)
+                max_z = max(max_z, cmd.Z)
             elif type(cmd) is ZA:
-                bounds.min_z = min(bounds.min_z, cmd.Z)
-                bounds.max_z = max(bounds.max_z, cmd.Z)
-        return bounds
+                min_z = min(min_z, cmd.Z)
+                max_z = max(max_z, cmd.Z)
+        return Boundaries(min_z, max_z)
 
 
 

@@ -1,4 +1,3 @@
-from Cnc import CNC
 from nose.tools import assert_equals, assert_raises, raises, assert_greater, assert_true
 import numpy as np
 
@@ -7,9 +6,9 @@ from Converter import Converter, G0, EU
 
 def test_to_machine():
     c = Converter(rapid_move_speed_mm_min=1500)
-    result = c.convert("/home/arne/vhf_cam330_cnc450_spc600/test_vhf_cnc.cnc")
+    result = c.convert("C:\\git\\test_vhf_cnc.cnc")
     print(result)
-    f = open("/home/arne/cnc.txt", "w+")
+    f = open("C:\\git\\cnc.txt", "w+")
 
     for line in result[0]:
         f.write(line + "\n")
