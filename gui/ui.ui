@@ -268,7 +268,7 @@
         <item>
          <widget class="QGroupBox" name="groupBox_2">
           <property name="title">
-           <string>Load File</string>
+           <string>Machine Code</string>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_8">
            <item>
@@ -300,94 +300,6 @@
                  </item>
                 </layout>
                </item>
-               <item>
-                <widget class="QGroupBox" name="groupBox_3">
-                 <property name="title">
-                  <string>Workpiece Origin</string>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_9">
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_7">
-                    <item>
-                     <widget class="QLabel" name="label_8">
-                      <property name="text">
-                       <string>X (mm):</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QDoubleSpinBox" name="doubleSpinBoxOriginX">
-                      <property name="readOnly">
-                       <bool>true</bool>
-                      </property>
-                      <property name="decimals">
-                       <number>10</number>
-                      </property>
-                      <property name="maximum">
-                       <double>999.000000000000000</double>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_6">
-                    <item>
-                     <widget class="QLabel" name="label_9">
-                      <property name="text">
-                       <string>Y (mm):</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QDoubleSpinBox" name="doubleSpinBoxOriginY">
-                      <property name="readOnly">
-                       <bool>true</bool>
-                      </property>
-                      <property name="decimals">
-                       <number>10</number>
-                      </property>
-                      <property name="maximum">
-                       <double>999.000000000000000</double>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_5">
-                    <item>
-                     <widget class="QLabel" name="label_10">
-                      <property name="text">
-                       <string>Z (mm):</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QDoubleSpinBox" name="doubleSpinBoxOriginZ">
-                      <property name="readOnly">
-                       <bool>true</bool>
-                      </property>
-                      <property name="decimals">
-                       <number>10</number>
-                      </property>
-                      <property name="maximum">
-                       <double>999.000000000000000</double>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButtonUsePositionAsOrigin">
-                    <property name="text">
-                     <string>Use Current Position</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
               </layout>
              </item>
              <item>
@@ -400,6 +312,61 @@
                </property>
                <property name="readOnly">
                 <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="groupBox_3">
+               <property name="title">
+                <string>Settings</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_9">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_5">
+                  <item>
+                   <widget class="QLabel" name="label_8">
+                    <property name="text">
+                     <string>Rapid Move Speed (mm/min)</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="doubleSpinBoxRapidMoveSpeed">
+                    <property name="maximum">
+                     <double>9999.000000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>1400.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_6">
+                  <item>
+                   <widget class="QLabel" name="label_23">
+                    <property name="text">
+                     <string>Port</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="lineEditComPort">
+                    <property name="text">
+                     <string>/dev/ttyUSB0</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButtonExecuteCode">
+               <property name="text">
+                <string>Execute</string>
                </property>
               </widget>
              </item>

@@ -1,7 +1,8 @@
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QFileDialog
 
-from Cnc import CNC
+import Sender
+from Converter import Converter
 
 
 class Ui(QtWidgets.QMainWindow):
@@ -22,11 +23,12 @@ class Ui(QtWidgets.QMainWindow):
         self.pushButtonSendInit.clicked.connect(self.__send_init_clicked)
         self.pushButtonMoveToZero.clicked.connect(self.__move_to_zero_clicked)
         self.pushButtonSendPosition.clicked.connect(self.__send_position_clicked)
-        self.pushButtonUsePositionAsOrigin.clicked.connect(self.__use_current_position_as_origin_clicked)
         self.pushButtonChooseFile.clicked.connect(self.__choose_g_code_file_clicked)
+        self.pushButtonExecuteCode.clicked.connect(self.__execute_commands_clicked)
 
-        self.cnc = CNC()
-        self.cnc.send_command.connect(self.__send_command_handler)
+
+
+        self.current_cmds = []
 
         self.show()
 
@@ -52,7 +54,6 @@ class Ui(QtWidgets.QMainWindow):
         self.doubleSpinBoxZPosition.setSingleStep(new_value)
 
     def __send_init_clicked(self):
-        self.cnc.initialize()
         self.disable_position_signal = True
         self.doubleSpinBoxXPosition.setValue(0)
         self.doubleSpinBoxYPosition.setValue(0)
@@ -76,24 +77,32 @@ class Ui(QtWidgets.QMainWindow):
 
         if dlg.exec_():
             file_names = dlg.selectedFiles()
-            f = open(file_names[0], 'r')
-            with f:
-                commands = self.cnc.load_g_code(f)
-                self.plainTextEditLoadedCommands.clear()
-                for cmd in commands:
-                    self.plainTextEditLoadedCommands.appendPlainText(cmd)
+            c = Converter(self.doubleSpinBoxRapidMoveSpeed.value())
+            cmds, bounds = c.convert(file_names[0])
+            self.plainTextEditLoadedCommands.clear()
+            for cmd in cmds:
+                self.plainTextEditLoadedCommands.appendPlainText(cmd)
 
+            self.current_cmds = cmds
 
-    def __use_current_position_as_origin_clicked(self):
-        self.doubleSpinBoxOriginX.setValue(self.doubleSpinBoxXPosition.value())
-        self.doubleSpinBoxOriginY.setValue(self.doubleSpinBoxYPosition.value())
-        self.doubleSpinBoxOriginZ.setValue(self.doubleSpinBoxZPosition.value())
+    def __execute_commands_clicked(self):
+        self.sender = Sender.Sender(self.lineEditComPort.text(), self.current_cmds)
+        self.sender.command_sent_successful.connect(self.__cmd_sent_successful_handler)
+        self.sender.command_send_fail.connect(self.__cmd_send_fail_handler)
+        self.sender.start()
+
+    def __cmd_sent_successful_handler(self, cmd):
+        self.plainTextEditTerminal.appendHtml("<font color=\"green\">" + cmd + "</font>")
+
+    def __cmd_send_fail_handler(self, cmd, error):
+        self.plainTextEditTerminal.appendHtml("<font color=\"red\">" + cmd + " -- ERROR: " + error + "</font>")
 
     def __move_absolute(self):
-        self.cnc.move_absolute(self.doubleSpinBoxXPosition.value(), self.doubleSpinBoxYPosition.value(), self.doubleSpinBoxZPosition.value())
+        pass
 
     def __send_command_handler(self, command):
         """
         Listens to the cnc command send signal
         """
         self.plainTextEditTerminal.appendPlainText(command)
+

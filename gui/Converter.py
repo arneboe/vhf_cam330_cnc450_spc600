@@ -39,6 +39,8 @@ class Converter:
         :param rapid_move_speed_mm_min: rapid move speed in mm/min
         """
         self.rapid_move_speed_steps = self._convert_speed_to_machine(rapid_move_speed_mm_min)
+        print("rapid move speed in steps/s: " + str(self.rapid_move_speed_steps))
+        # TODO validate rapid move speed!
 
     def convert(self, path):
         """
