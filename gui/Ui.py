@@ -60,6 +60,18 @@ class Ui(QtWidgets.QMainWindow):
         self.doubleSpinBoxZPosition.setValue(0)
         self.disable_position_signal = False
 
+        init_cmds= ["^s0;",
+                    "AP5000,5000,5000;",
+                    "CO790000,1024000,160000;",
+                    "VB200,200,200;",
+                    "RV2500,300;",
+                    "RF;",
+                    "SO1,0;SO2,0;",
+                    "EU3000,3000,3000;"]
+
+        self.send_async(init_cmds)
+
+
     def __move_to_zero_clicked(self):
         self.disable_position_signal = True
         self.doubleSpinBoxXPosition.setValue(0)
@@ -86,7 +98,10 @@ class Ui(QtWidgets.QMainWindow):
             self.current_cmds = cmds
 
     def __execute_commands_clicked(self):
-        self.sender = Sender.Sender(self.lineEditComPort.text(), self.current_cmds)
+        self.send_async(self.current_cmds)
+
+    def send_async(self, cmds):
+        self.sender = Sender.Sender(self.lineEditComPort.text(), cmds)
         self.sender.command_sent_successful.connect(self.__cmd_sent_successful_handler)
         self.sender.command_send_fail.connect(self.__cmd_send_fail_handler)
         self.sender.start()
