@@ -28,7 +28,7 @@ class Ui(QtWidgets.QMainWindow):
         self.pushButtonConnect.clicked.connect(self.__connect_clicked)
 
         self.progressBar = QProgressBar()
-        self.statusBar().addPermanentWidget(self.progressBar)
+        self.statusBar.addPermanentWidget(self.progressBar)
 
         self.current_cmds = []
 
@@ -74,13 +74,20 @@ class Ui(QtWidgets.QMainWindow):
         self.send_async(init_cmds)
 
     def __connect_clicked(self):
-        self.sender = Sender.Sender(self.lineEditComPort.text())
-        self.sender.command_sent_successful.connect(self.__cmd_sent_successful_handler)
-        self.sender.error.connect(self.__print_error_handler)
-        self.sender.finished.connect(self.__cmd_sender_finished_handler)
-        self.sender.send_status.connect(self.__cmd_sender_send_status_handler)
-        self.sender.start()
-        self.__set_ui_enabled(True)
+
+        if self.pushButtonConnect.isChecked():
+            self.pushButtonConnect.setText("Connected")
+            self.sender = Sender.Sender(self.lineEditComPort.text())
+            self.sender.command_sent_successful.connect(self.__cmd_sent_successful_handler)
+            self.sender.error.connect(self.__print_error_handler)
+            self.sender.finished.connect(self.__cmd_sender_finished_handler)
+            self.sender.send_status.connect(self.__cmd_sender_send_status_handler)
+            self.sender.start()
+            self.__set_ui_enabled(True)
+        else:
+            self.pushButtonConnect.setText("Connect")
+            self.sender.stop()
+            self.__set_ui_enabled(False)
 
     def __move_to_zero_clicked(self):
         self.disable_position_signal = True
@@ -128,6 +135,9 @@ class Ui(QtWidgets.QMainWindow):
         self.plainTextEditTerminal.appendHtml("<font color=\"red\"> ERROR: " + error_msg + "</font>")
 
     def __cmd_sender_finished_handler(self):
+        self.pushButtonConnect.setText("Connect")
+        self.pushButtonConnect.setChecked(False)
+        self.__set_ui_enabled(False)
 
         self.__set_ui_enabled(False)
 
@@ -158,11 +168,11 @@ class Ui(QtWidgets.QMainWindow):
 
     def __cmd_sender_send_status_handler(self, num_cmds):
         if num_cmds == 0:
-            self.statusBar().showMessage("")
+            self.statusBar.showMessage("")
             self.progressBar.hide()
             self.progressBar.setMaximum(0)
         else:
-            self.statusBar().showMessage("Sending (" + str(num_cmds) + " commands left)")
+            self.statusBar.showMessage("Sending (" + str(num_cmds) + " commands left)")
 
             if self.progressBar.maximum() < num_cmds:
                 # new maximum
