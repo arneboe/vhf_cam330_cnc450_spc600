@@ -15,10 +15,14 @@ if __name__ == '__main__':
             cmd = s.read_until("\n".encode())
             print(cmd)
 
-            if (i % 10) == 0:
-                s.write("3".encode())
-                s.write("!3 SYNTAX".encode())
-            else:
-                s.write("0".encode())
-                sleep(0.5)
-                s.write("!0 OK".encode())
+            s.write("0".encode())
+            sleep(0.1)
+            s.write("!0 OK".encode())
+
+      #      if (i % 10) == 0:
+      #          s.write("3".encode())
+      #          s.write("!3 SYNTAX".encode())
+      #      else:
+      #          s.write("0".encode())
+      #          sleep(0.5)
+      #          s.write("!0 OK".encode())

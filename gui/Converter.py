@@ -137,6 +137,9 @@ class Converter:
                     current_z = cmd.Z
         return vhf_codes
 
+    @staticmethod
+    def __convert_MA_to_string(cmd):
+        return "MA" + str(cmd.X) + "," + str(cmd.Y) + "," + str(cmd.Z) + ";"
 
     def _convert_to_string(self, vhf_codes):
         """
@@ -148,7 +151,7 @@ class Converter:
 
         for cmd in vhf_codes:
             if type(cmd) is MA:
-                result.append("MA" + str(cmd.X) + "," + str(cmd.Y) + "," + str(cmd.Z) + ";")
+                result.append(Converter.__convert_MA_to_string(cmd))
             elif type(cmd) is PA:
                 result.append("PA" + str(cmd.X) + "," + str(cmd.Y) + ";")
             elif type(cmd) is ZA:
@@ -266,9 +269,6 @@ class Converter:
                     #raise RuntimeError("Z Coordinates < 0 not allowed")
                     pass
 
-
-
-
     def _add_lead_in(self, vhf_codes):
         target_x = float('nan')
         target_y = float('nan')
@@ -302,9 +302,9 @@ class Converter:
     def _convert_G0_to_vhf(self, g_code):
         result = []
         result.append(EU(self.rapid_move_speed_steps))
-        x = self._convert_mm_to_machine(g_code.X)
-        y = self._convert_mm_to_machine(g_code.Y)
-        z = self._convert_mm_to_machine(g_code.Z)
+        x = Converter._convert_mm_to_machine(g_code.X)
+        y = Converter._convert_mm_to_machine(g_code.Y)
+        z = Converter._convert_mm_to_machine(g_code.Z)
         result.append(MA(x, y, z))
         return result
 
@@ -312,9 +312,9 @@ class Converter:
         result = []
         f = self._convert_speed_to_machine(g_code.F)
         result.append(EU(f))
-        x = self._convert_mm_to_machine(g_code.X)
-        y = self._convert_mm_to_machine(g_code.Y)
-        z = self._convert_mm_to_machine(g_code.Z)
+        x = Converter._convert_mm_to_machine(g_code.X)
+        y = Converter._convert_mm_to_machine(g_code.Y)
+        z = Converter._convert_mm_to_machine(g_code.Z)
         result.append(MA(x, y, z))
         return result
 
@@ -322,8 +322,8 @@ class Converter:
         result = []
         f = self._convert_speed_to_machine(g_code.F)
         result.append(EU(f))
-        cx = self._convert_mm_to_machine(g_code.cX)
-        cy = self._convert_mm_to_machine(g_code.cY)
+        cx = Converter._convert_mm_to_machine(g_code.cX)
+        cy = Converter._convert_mm_to_machine(g_code.cY)
         result.append(AA(cx, cy, g_code.A))
         return result
 
@@ -332,8 +332,8 @@ class Converter:
         steps_sec = mm_sec * 80.0 # 1mm = 80 steps
         return int(round(steps_sec))
 
-
-    def _convert_mm_to_machine(self, distance):
+    @staticmethod
+    def _convert_mm_to_machine(distance):
         # converts distance from mm to machine units (micrometer)
         return int(round(distance * 1000.0))
 
@@ -368,6 +368,13 @@ class Converter:
                 max_z = max(max_z, cmd.Z)
         return Boundaries(min_z, max_z)
 
-
-
-
+    @staticmethod
+    def build_move_command(x_mm, y_mm, z_mm):
+        """
+        Creates a single MA command from x/y/z
+        """
+        x = Converter._convert_mm_to_machine(x_mm)
+        y = Converter._convert_mm_to_machine(y_mm)
+        z = Converter._convert_mm_to_machine(z_mm)
+        ma = MA(x, y, z)
+        return Converter.__convert_MA_to_string(ma)

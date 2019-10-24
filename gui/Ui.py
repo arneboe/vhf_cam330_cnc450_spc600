@@ -1,5 +1,5 @@
 from PyQt5 import QtWidgets, uic
-from PyQt5.QtWidgets import QFileDialog
+from PyQt5.QtWidgets import QFileDialog, QProgressBar
 
 import Sender
 from Converter import Converter
@@ -25,8 +25,10 @@ class Ui(QtWidgets.QMainWindow):
         self.pushButtonSendPosition.clicked.connect(self.__send_position_clicked)
         self.pushButtonChooseFile.clicked.connect(self.__choose_g_code_file_clicked)
         self.pushButtonExecuteCode.clicked.connect(self.__execute_commands_clicked)
+        self.pushButtonConnect.clicked.connect(self.__connect_clicked)
 
-
+        self.progressBar = QProgressBar()
+        self.statusBar().addPermanentWidget(self.progressBar)
 
         self.current_cmds = []
 
@@ -71,6 +73,14 @@ class Ui(QtWidgets.QMainWindow):
 
         self.send_async(init_cmds)
 
+    def __connect_clicked(self):
+        self.sender = Sender.Sender(self.lineEditComPort.text())
+        self.sender.command_sent_successful.connect(self.__cmd_sent_successful_handler)
+        self.sender.error.connect(self.__print_error_handler)
+        self.sender.finished.connect(self.__cmd_sender_finished_handler)
+        self.sender.send_status.connect(self.__cmd_sender_send_status_handler)
+        self.sender.start()
+        self.__set_ui_enabled(True)
 
     def __move_to_zero_clicked(self):
         self.disable_position_signal = True
@@ -97,23 +107,29 @@ class Ui(QtWidgets.QMainWindow):
 
             self.current_cmds = cmds
 
+    def __move_absolute(self):
+        cmd = Converter.build_move_command(self.doubleSpinBoxXPosition.value(),
+                                           self.doubleSpinBoxYPosition.value(),
+                                           self.doubleSpinBoxZPosition.value())
+        self.sender.enqeue_cmd(cmd)
+
+
     def __execute_commands_clicked(self):
         self.send_async(self.current_cmds)
 
     def send_async(self, cmds):
-        self.sender = Sender.Sender(self.lineEditComPort.text(), cmds)
-        self.sender.command_sent_successful.connect(self.__cmd_sent_successful_handler)
-        self.sender.command_send_fail.connect(self.__cmd_send_fail_handler)
-        self.sender.start()
+        for cmd in cmds:
+            self.sender.enqeue_cmd(cmd)
 
     def __cmd_sent_successful_handler(self, cmd):
         self.plainTextEditTerminal.appendHtml("<font color=\"green\">" + cmd + "</font>")
 
-    def __cmd_send_fail_handler(self, cmd, error):
-        self.plainTextEditTerminal.appendHtml("<font color=\"red\">" + cmd + " -- ERROR: " + error + "</font>")
+    def __print_error_handler(self, error_msg):
+        self.plainTextEditTerminal.appendHtml("<font color=\"red\"> ERROR: " + error_msg + "</font>")
 
-    def __move_absolute(self):
-        pass
+    def __cmd_sender_finished_handler(self):
+
+        self.__set_ui_enabled(False)
 
     def __send_command_handler(self, command):
         """
@@ -121,3 +137,40 @@ class Ui(QtWidgets.QMainWindow):
         """
         self.plainTextEditTerminal.appendPlainText(command)
 
+    def __set_ui_enabled(self, enabled):
+        """
+        Enable/Disable ui while sending
+        """
+        self.doubleSpinBoxXPosition.setEnabled(enabled)
+        self.doubleSpinBoxYPosition.setEnabled(enabled)
+        self.doubleSpinBoxZPosition.setEnabled(enabled)
+
+
+        self.doubleSpinBoxXSteps.setEnabled(enabled)
+        self.doubleSpinBoxYSteps.setEnabled(enabled)
+        self.doubleSpinBoxZSteps.setEnabled(enabled)
+
+        self.pushButtonSendInit.setEnabled(enabled)
+        self.pushButtonMoveToZero.setEnabled(enabled)
+        self.pushButtonSendPosition.setEnabled(enabled)
+        self.pushButtonChooseFile.setEnabled(enabled)
+        self.pushButtonExecuteCode.setEnabled(enabled)
+
+    def __cmd_sender_send_status_handler(self, num_cmds):
+        if num_cmds == 0:
+            self.statusBar().showMessage("")
+            self.progressBar.hide()
+            self.progressBar.setMaximum(0)
+        else:
+            self.statusBar().showMessage("Sending (" + str(num_cmds) + " commands left)")
+
+            if self.progressBar.maximum() < num_cmds:
+                # new maximum
+                self.progressBar.setMaximum(num_cmds)
+            self.progressBar.setValue(self.progressBar.maximum() - num_cmds)
+            self.progressBar.show()
+
+    def closeEvent(self, event):
+        if self.sender.isRunning():
+            self.sender.stop()
+        event.accept()
