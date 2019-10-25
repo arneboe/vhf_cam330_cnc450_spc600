@@ -286,7 +286,7 @@
              <item>
               <widget class="QGroupBox" name="groupBox_5">
                <property name="title">
-                <string>Workspace Dimensions</string>
+                <string>Workspace Dimensions (soft endstops)</string>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_16">
                 <item>
@@ -304,7 +304,7 @@
                      <double>99999999.000000000000000</double>
                     </property>
                     <property name="value">
-                     <double>790.000000000000000</double>
+                     <double>780.000000000000000</double>
                     </property>
                    </widget>
                   </item>
@@ -338,7 +338,7 @@
                      <double>99999999.000000000000000</double>
                     </property>
                     <property name="value">
-                     <double>1024.000000000000000</double>
+                     <double>1020.000000000000000</double>
                     </property>
                    </widget>
                   </item>

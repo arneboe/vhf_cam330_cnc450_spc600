@@ -446,3 +446,28 @@ class Converter:
         return "CO" + str(x) + "," + str(y) + "," + str(z) + ";"
 
 
+    def build_spindel_speed_command(self, rpm):
+        """
+         vhf spc600 (copy paste from cenon 3.3):
+         port 1, bits 0-7 and port 2, bits 0-1: revolution
+         input, bit 0: rotation achieved
+         input, bit 1: spindle stop
+         input, bit 2: spindel error
+        """
+
+        min_rpm = 800
+        max_rpm = 20000
+
+        # min and max values that we can send to the controller
+        min_value = 1
+        max_value = 1023
+
+
+        "SO1,0;SO2,0;"
+
+    def __encoden_spindel_to_byte(self, spindel_value):
+        """
+        param: spindel_value range(0, 1023)h
+        return: (byte1, byte2)
+        """
+        b0 = int(spindel_value / 255.0)
