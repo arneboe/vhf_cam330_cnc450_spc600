@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>992</width>
-    <height>515</height>
+    <height>537</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -815,6 +815,25 @@
               </widget>
              </item>
              <item>
+              <widget class="QGroupBox" name="groupBox_4">
+               <property name="title">
+                <string>Single Command (debugging only) </string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_15">
+                <item>
+                 <widget class="QLineEdit" name="lineEditSingleCommand"/>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButtonSendSingleCommand">
+                  <property name="text">
+                   <string>Send Single Command</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
               <spacer name="verticalSpacer">
                <property name="orientation">
                 <enum>Qt::Vertical</enum>
@@ -933,16 +952,6 @@
       </property>
       <property name="readOnly">
        <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEditSingleCommand"/>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButtonSendSingleCommand">
-      <property name="text">
-       <string>Send Single Command</string>
       </property>
      </widget>
     </item>

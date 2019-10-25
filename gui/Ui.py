@@ -32,6 +32,10 @@ class Ui(QtWidgets.QMainWindow):
         self.pushButtonConnect.clicked.connect(self.__connect_clicked)
         self.pushButtonSendSingleCommand.clicked.connect(self.__send_single_command_clicked)
 
+        self.lineEditSingleCommand.returnPressed.connect(self.__send_single_command_clicked)
+
+
+
         self.progressBar = QProgressBar()
         self.statusBar.addPermanentWidget(self.progressBar)
 
