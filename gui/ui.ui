@@ -936,6 +936,16 @@
       </property>
      </widget>
     </item>
+    <item>
+     <widget class="QLineEdit" name="lineEditSingleCommand"/>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButtonSendSingleCommand">
+      <property name="text">
+       <string>Send Single Command</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>

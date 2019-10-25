@@ -70,26 +70,14 @@ class Sender(QThread):
         # Therefore we append the "OE" command. "OE" asks for the explanation of the last error code.
         # "OE" will be execute after the move command has finished. The answer to "OE" inidicates that
         # all commands have finished.
-        cmd += "OE;"
-        cmd += "\n"
+
         print(cmd)
         s.write(cmd.encode())
         cmd_ok = s.read()
 
         if cmd_ok == "0".encode():
-            # the only thing that "OE" can reply is "!0 OK" but we dont know when, we wait forever
-            s.timeout = None
-            cmd_ok = s.read(size=len("!0 OK"))
-            if cmd_ok != "!0 OK".encode():
-                raise RuntimeError(cmd + " -- " + cmd_ok.decode())
-            else:
-                self.command_sent_successful.emit(cmd)
+            self.command_sent_successful.emit(cmd)
         else:
-            # we dont know what OE might reply, but it will be replied within the next second
-            # and we know that it will be an error
-            s.timeout = 1.0  # wait max one second
-            error = s.read(
-                len("!2 L_OVERFLOW"))  # longest possible answer is "!2 L_OVE RFLOW", all other errors are shorter
-            raise RuntimeError(cmd + " -- " + error.decode())
+            raise RuntimeError(cmd + " | Error Code: " + cmd_ok.decode())
 
 

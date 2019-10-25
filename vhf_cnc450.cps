@@ -18,7 +18,7 @@ minimumCircularSweep = toRad(0.01);
 maximumCircularSweep = toRad(360);
 allowHelicalMoves = false;
 allowSpiralMoves = false;
-allowedCircularPlanes =  (1 << PLANE_XY); // allow any circular motion
+allowedCircularPlanes = (1 << PLANE_XY); // allow any circular motion
 
 /**Specifies whether the work plane is mapped to the model
  * origin and work plane.
@@ -170,6 +170,8 @@ function onRapid(x, y, z)
     writeln("G0 X" + x_conv +" Y" + y_conv +" Z" + z_conv)
 }
 
+
+
 /** Circular move */
 function onCircular(clockwise, cx, cy, cz, x, y, z, feed) {
     if (isHelical() || (getCircularPlane() != PLANE_XY)) {
@@ -177,25 +179,28 @@ function onCircular(clockwise, cx, cy, cz, x, y, z, feed) {
       return;
     }
 
-    //hack to linearize if arc doesnt fit 
-    cx_tf = transform_x(cx)
-    cy_tf = transform_y(cy)
+    //vhf controller only accepts arcs that completely fit... even though we only use part of it 
+    cx_tf = transform_x(cx);
+    cy_tf = transform_y(cy);
 
-    //FIXME should be properties
-    if(cx_tf <= 0.1 || cx_tf >= 790.0)
+    r = getCircularRadius();
+    // add tolerance because the cnc controller sucks
+    r += 5.0; //mm
+
+    if(cx_tf + r >= 790 ||
+       cx_tf - r <= 0.1 ||
+       cy_tf + r >= 1000.0 ||
+       cy_tf - r <= 0.1)
     {
+        writeln("BEGIN_LIN;")
         linearize(tolerance);
-        return;
-    }
-    if(cy_tf <= 0.1 || cy_tf >= 1000.0)
-    {
-        linearize(tolerance);
+        writeln("END_LIN;")
         return;
     }
 
     cx_conv = xyzFormat.format(cx_tf)
     cy_conv = xyzFormat.format(cy_tf)
-    angle = angleFormat.format((clockwise ? -1 : 1) * getCircularSweep())
+    angle = angleFormat.format((clockwise ? 1 : -1) * getCircularSweep())
     f_conv = xyzFormat.format(feed)
 
     writeln("GAA cX" + cx_conv + " cY" + cy_conv + " A" + angle + " F" + f_conv)

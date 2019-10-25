@@ -27,6 +27,12 @@ EU = namedtuple('EU', 'F')
 # X/Y in machine units
 PA = namedtuple('PA', 'X Y')
 
+# X in mchine units
+XA = namedtuple('XA', 'X')
+
+# Y in machine units
+YA = namedtuple('YA', 'Y')
+
 # Z in machine units
 ZA = namedtuple('ZA', 'Z')
 
@@ -141,6 +147,22 @@ class Converter:
     def __convert_MA_to_string(cmd):
         return "MA" + str(cmd.X) + "," + str(cmd.Y) + "," + str(cmd.Z) + ";"
 
+    @staticmethod
+    def __convert_PA_to_string(cmd):
+        return "PA" + str(cmd.X) + "," + str(cmd.Y) + ";"
+
+    @staticmethod
+    def __convert_ZA_to_string(cmd):
+        return "ZA" + str(cmd.Z) + ";"
+
+    @staticmethod
+    def __convert_XA_to_string(cmd):
+        return "XA" + str(cmd.X) + ";"
+
+    @staticmethod
+    def __convert_YA_to_string(cmd):
+        return "YA" + str(cmd.Y) + ";"
+
     def _convert_to_string(self, vhf_codes):
         """
         Convert commands to strings
@@ -153,9 +175,9 @@ class Converter:
             if type(cmd) is MA:
                 result.append(Converter.__convert_MA_to_string(cmd))
             elif type(cmd) is PA:
-                result.append("PA" + str(cmd.X) + "," + str(cmd.Y) + ";")
+                result.append(Converter.__convert_PA_to_string(cmd))
             elif type(cmd) is ZA:
-                result.append("ZA" + str(cmd.Z) + ";")
+                result.append(Converter.__convert_ZA_to_string(cmd))
             elif type(cmd) is AA:
                 result.append("AA" + str(cmd.cX) + "," + str(cmd.cY) + "," + str(cmd.A) + ";")
             elif type(cmd) is EU:
@@ -369,7 +391,31 @@ class Converter:
         return Boundaries(min_z, max_z)
 
     @staticmethod
-    def build_move_command(x_mm, y_mm, z_mm):
+    def build_PA_command(x_mm, y_mm):
+        x = Converter._convert_mm_to_machine(x_mm)
+        y = Converter._convert_mm_to_machine(y_mm)
+        pa = PA(x, y)
+        return Converter.__convert_PA_to_string(pa)
+
+    @staticmethod
+    def build_ZA_command(z_mm):
+        z = Converter._convert_mm_to_machine(z_mm)
+        za = ZA(z)
+        return Converter.__convert_ZA_to_string(za)
+
+    @staticmethod
+    def build_XA_command(x_mm):
+        x = Converter._convert_mm_to_machine(x_mm)
+        xa = XA(x)
+        return Converter.__convert_XA_to_string(xa)
+
+    @staticmethod
+    def build_YA_command(y_mm):
+        y = Converter._convert_mm_to_machine(y_mm)
+        return Converter.__convert_YA_to_string(YA(y))
+
+    @staticmethod
+    def build_MA_command(x_mm, y_mm, z_mm):
         """
         Creates a single MA command from x/y/z
         """
@@ -378,3 +424,5 @@ class Converter:
         z = Converter._convert_mm_to_machine(z_mm)
         ma = MA(x, y, z)
         return Converter.__convert_MA_to_string(ma)
+
+

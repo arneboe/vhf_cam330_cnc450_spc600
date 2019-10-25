@@ -26,6 +26,7 @@ class Ui(QtWidgets.QMainWindow):
         self.pushButtonChooseFile.clicked.connect(self.__choose_g_code_file_clicked)
         self.pushButtonExecuteCode.clicked.connect(self.__execute_commands_clicked)
         self.pushButtonConnect.clicked.connect(self.__connect_clicked)
+        self.pushButtonSendSingleCommand.clicked.connect(self.__send_single_command_clicked)
 
         self.progressBar = QProgressBar()
         self.statusBar.addPermanentWidget(self.progressBar)
@@ -36,15 +37,15 @@ class Ui(QtWidgets.QMainWindow):
 
     def __x_position_changed(self):
         if not self.disable_position_signal and self.checkBoxUpdatePositionLive.isChecked():
-            self.__move_absolute()
+            self.sender.enqeue_cmd(Converter.build_XA_command(self.doubleSpinBoxXPosition.value()))
 
     def __y_position_changed(self):
         if not self.disable_position_signal and self.checkBoxUpdatePositionLive.isChecked():
-            self.__move_absolute()
+            self.sender.enqeue_cmd(Converter.build_YA_command(self.doubleSpinBoxYPosition.value()))
 
     def __z_position_changed(self):
         if not self.disable_position_signal and self.checkBoxUpdatePositionLive.isChecked():
-            self.__move_absolute()
+            self.sender.enqeue_cmd(Converter.build_ZA_command(self.doubleSpinBoxZPosition.value()))
 
     def __x_position_steps_changed(self, new_value):
         self.doubleSpinBoxXPosition.setSingleStep(new_value)
@@ -94,11 +95,15 @@ class Ui(QtWidgets.QMainWindow):
         self.doubleSpinBoxXPosition.setValue(0)
         self.doubleSpinBoxYPosition.setValue(0)
         self.doubleSpinBoxZPosition.setValue(0)
-        self.__move_absolute()
         self.disable_position_signal = False
 
+        z0 = Converter.build_ZA_command(0)
+        self.sender.enqeue_cmd(z0)
+        pa = Converter.build_PA_command(0, 0)
+        self.sender.enqeue_cmd(pa)
+
     def __send_position_clicked(self):
-        self.__move_absolute()
+        pass
 
     def __choose_g_code_file_clicked(self):
         dlg = QFileDialog()
@@ -113,13 +118,6 @@ class Ui(QtWidgets.QMainWindow):
                 self.plainTextEditLoadedCommands.appendPlainText(cmd)
 
             self.current_cmds = cmds
-
-    def __move_absolute(self):
-        cmd = Converter.build_move_command(self.doubleSpinBoxXPosition.value(),
-                                           self.doubleSpinBoxYPosition.value(),
-                                           self.doubleSpinBoxZPosition.value())
-        self.sender.enqeue_cmd(cmd)
-
 
     def __execute_commands_clicked(self):
         self.send_async(self.current_cmds)
@@ -140,6 +138,10 @@ class Ui(QtWidgets.QMainWindow):
         self.__set_ui_enabled(False)
 
         self.__set_ui_enabled(False)
+
+    def __send_single_command_clicked(self):
+        cmd = self.lineEditSingleCommand.text()
+        self.sender.enqeue_cmd(cmd)
 
     def __send_command_handler(self, command):
         """
