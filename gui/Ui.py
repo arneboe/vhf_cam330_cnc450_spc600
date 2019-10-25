@@ -10,6 +10,10 @@ class Ui(QtWidgets.QMainWindow):
         super(Ui, self).__init__()  # Call the inherited classes __init__ method
         uic.loadUi('ui.ui', self)
 
+        # buffer the last z position that was send to the machine
+        # this is needed to determine th PA/ZA order when moving in 3D
+        self.current_z_pos_mm = 0
+
         self.doubleSpinBoxXPosition.valueChanged.connect(self.__x_position_changed)
         self.doubleSpinBoxYPosition.valueChanged.connect(self.__y_position_changed)
         self.doubleSpinBoxZPosition.valueChanged.connect(self.__z_position_changed)
@@ -45,7 +49,8 @@ class Ui(QtWidgets.QMainWindow):
 
     def __z_position_changed(self):
         if not self.disable_position_signal and self.checkBoxUpdatePositionLive.isChecked():
-            self.sender.enqeue_cmd(Converter.build_ZA_command(self.doubleSpinBoxZPosition.value()))
+            self.current_z_pos_mm = self.doubleSpinBoxZPosition.value()
+            self.sender.enqeue_cmd(Converter.build_ZA_command(self.current_z_pos_mm))
 
     def __x_position_steps_changed(self, new_value):
         self.doubleSpinBoxXPosition.setSingleStep(new_value)
@@ -97,13 +102,27 @@ class Ui(QtWidgets.QMainWindow):
         self.doubleSpinBoxZPosition.setValue(0)
         self.disable_position_signal = False
 
+        self.current_z_pos_mm = 0.0
         z0 = Converter.build_ZA_command(0)
         self.sender.enqeue_cmd(z0)
         pa = Converter.build_PA_command(0, 0)
         self.sender.enqeue_cmd(pa)
 
     def __send_position_clicked(self):
-        pass
+        new_z = self.doubleSpinBoxZPosition.value()
+
+        za = Converter.build_ZA_command(new_z)
+        pa = Converter.build_PA_command(self.doubleSpinBoxXPosition.value(), self.doubleSpinBoxYPosition.value())
+
+        # when we move up we have to move z first, when we move down we have to move x/y first
+        if new_z < self.current_z_pos_mm:
+            # up motion, do ZA first
+            self.send_async([za, pa])
+        else:
+            # down motion, do PA first
+            self.send_async([pa, za])
+
+        self.current_z_pos_mm = new_z
 
     def __choose_g_code_file_clicked(self):
         dlg = QFileDialog()

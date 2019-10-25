@@ -12,12 +12,12 @@ if __name__ == '__main__':
     with port as s:
         while True:
             i = i + 1
-            cmd = s.read_until("\n".encode())
+            cmd = s.read_until(";".encode())
             print(cmd)
 
+            sleep(0.05)
             s.write("0".encode())
-            sleep(0.1)
-            s.write("!0 OK".encode())
+
 
       #      if (i % 10) == 0:
       #          s.write("3".encode())

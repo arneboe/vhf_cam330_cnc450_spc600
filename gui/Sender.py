@@ -39,7 +39,7 @@ class Sender(QThread):
                         cmd = self.cmds.get(timeout=0.1)  # block until cmd is available
                     except queue.Empty:
                         continue
-
+                    self.send_status.emit(self.cmds.qsize())
                     # execute cmd
                     try:
                         self.__send_cmd(s, cmd)
