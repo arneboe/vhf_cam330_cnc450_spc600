@@ -72,14 +72,22 @@ class Ui(QtWidgets.QMainWindow):
         self.doubleSpinBoxZPosition.setValue(0)
         self.disable_position_signal = False
 
-        init_cmds= ["^s0;",
-                    "AP5000,5000,5000;",
-                    "CO790000,1024000,160000;",
+        begin_init = Converter.build_begin_init_command()
+        set_spindel_gradient = Converter.build_spindel_gradient_command(x_mm=5, y_mm=5, z_mm=5)
+        set_table_dimensions = Converter.build_table_dimensions_command(self.doubleSpinBoxXDimensions.value(),
+                                                                        self.doubleSpinBoxYDimensions.value(),
+                                                                        self.doubleSpinBoxZDimensions.value())
+
+        # TODO try RP command to reduce acceleration and check if small movements become smother?!
+
+        init_cmds = [begin_init,
+                     set_spindel_gradient,
+                     set_table_dimensions,
                     "VB200,200,200;",
-                    "RV2500,300;",
-                    "RF;",
-                    "SO1,0;SO2,0;",
-                    "EU3000,3000,3000;"]
+                    "RV2500,300;",  # speeds for adjustmend drive (2500=move in speed, 200=move out speed)
+                    "RF;",          # do adjustment drive
+                    "SO1,0;SO2,0;", # set spindel speed to zero
+                    "EU3000,3000,3000;"] # set initial mvoe speed to 3000 steps/sec
 
         self.send_async(init_cmds)
 

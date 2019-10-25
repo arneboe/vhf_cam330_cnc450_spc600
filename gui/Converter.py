@@ -288,8 +288,8 @@ class Converter:
         for cmd in vhf_codes:
             if hasattr(cmd, "Z"):
                 if cmd.Z < 0:
-                    #raise RuntimeError("Z Coordinates < 0 not allowed")
-                    pass
+                    raise RuntimeError("Z Coordinates < 0 not allowed")
+
 
     def _add_lead_in(self, vhf_codes):
         target_x = float('nan')
@@ -424,5 +424,25 @@ class Converter:
         z = Converter._convert_mm_to_machine(z_mm)
         ma = MA(x, y, z)
         return Converter.__convert_MA_to_string(ma)
+
+    @staticmethod
+    def build_begin_init_command():
+        return "^s0;"
+
+    @staticmethod
+    def build_spindel_gradient_command(x_mm, y_mm, z_mm):
+        x = Converter._convert_mm_to_machine(x_mm)
+        y = Converter._convert_mm_to_machine(y_mm)
+        z = Converter._convert_mm_to_machine(z_mm)
+
+        return "AP" + str(x) + "," + str(y) + "," + str(z) + ";"
+
+    @staticmethod
+    def build_table_dimensions_command(x_mm, y_mm, z_mm):
+        x = Converter._convert_mm_to_machine(x_mm)
+        y = Converter._convert_mm_to_machine(y_mm)
+        z = Converter._convert_mm_to_machine(z_mm)
+
+        return "CO" + str(x) + "," + str(y) + "," + str(z) + ";"
 
 
