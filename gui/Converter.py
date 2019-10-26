@@ -145,7 +145,12 @@ class Converter:
 
     @staticmethod
     def __convert_MA_to_string(cmd):
-        return "MA" + str(cmd.X) + "," + str(cmd.Y) + "," + str(cmd.Z) + ";"
+        za = ZA(cmd.Z)
+        pa = PA(cmd.X, cmd.Y)
+        return Converter.__convert_ZA_to_string(za) + Converter.__convert_PA_to_string(pa)
+
+
+    #    return "MA" + str(cmd.X) + "," + str(cmd.Y) + "," + str(cmd.Z) + ";"
 
     @staticmethod
     def __convert_PA_to_string(cmd):
@@ -173,7 +178,13 @@ class Converter:
 
         for cmd in vhf_codes:
             if type(cmd) is MA:
-                result.append(Converter.__convert_MA_to_string(cmd))
+                za = ZA(cmd.Z)
+                pa = PA(cmd.X, cmd.Y)
+              #  return Converter.__convert_ZA_to_string(za) + Converter.__convert_PA_to_string(pa)
+
+                result.append(Converter.__convert_ZA_to_string(za))
+                result.append(Converter.__convert_PA_to_string(pa))
+
             elif type(cmd) is PA:
                 result.append(Converter.__convert_PA_to_string(cmd))
             elif type(cmd) is ZA:
@@ -422,8 +433,11 @@ class Converter:
         x = Converter._convert_mm_to_machine(x_mm)
         y = Converter._convert_mm_to_machine(y_mm)
         z = Converter._convert_mm_to_machine(z_mm)
+        za = ZA(z)
+        pa = PA(x, y)
+
         ma = MA(x, y, z)
-        return Converter.__convert_MA_to_string(ma)
+        return Converter.__convert_ZA_to_string(za) + Converter.__convert_PA_to_string(pa)
 
     @staticmethod
     def build_begin_init_command():
