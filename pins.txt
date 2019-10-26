@@ -1,0 +1,42 @@
+Z-Achse:
+Pin 1: Grau
+Pin 2: Braun
+Pin 3: Orange
+Pin 4: Grün
+Pin 5: Rot
+Pin 6: Blau
+Pin 7: Gelb -> Auf den Anschluss und auf kondensator
+Pin 8: Schwarz -> LM339N Pins 4 und 6 und 10
+Pin 9: (Mitte) Kuhfarbe
+
+
+
+
+SPindel:
+
+D-Sbu25:
+1 : schwarz, 50HZ rauschen, vielleicht digital signal?
+2: weiß, 50hz rauschen, digital signal
+3: grau, 50 hz sinus wenn aus,  PORT 2 BIT 0
+4: lila 50 HZ sinus wenn aus, PORT 2 BIT 2
+5: Hellblau, 50 HZ sinus wenn aus, PORT 2 BIT 4
+6: Blau, 50 HZ sinus wenn aus, PORT 1 BIT 1
+7: Hellgrün, 50 HZ sinus wenn aus, PORT 1 BIT 3
+8: Grün, 50 HZ sinus wenn aus, PORT 1 BIT 5
+9: Gelb, 50 hz sinus, PORT unbekannt
+10: rosa, 50 hz sinus, PORT unbekannt
+11: orange, 50 hz sinus, PORT unbekannt
+12: rot, 50 hz sinus, PORT unbekannt
+13: hellbraun, 50 hz sinus, PORT unbekannt
+14: schwarz weiß, 50 hz clock, 
+15: grau schwarz, 50 hz clock
+16: lila 2, 50 hz sinus wenn aus, PORT 2 PIN 1
+17: hellblau schwarz, 50 hz sinus wenn aus, PORT 2 PIN 3
+18: blau weiß, 50 hz sinus wenn aus, PORT 1 PIN 0
+19: hellgrün schwarz, sinus wenn aus, PORT 1 PIN 2
+20: grünweiß, sinus wenn aus, PORT 1 PIN 4
+21: gelb schwarz, sinus wenn aus, PORT 1 PIN 6
+22: weiß schwarz, sinus wenn aus, PORT 1 PIN 7
+23: orange schwarz, sinus wenn aus, unbekannt
+24: rot weiß, sinus wenn aus, port unbekannt
+25: braun weeiß, sinus, port unbekannt
