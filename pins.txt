@@ -6,7 +6,7 @@ Pin 4: Grün
 Pin 5: Rot
 Pin 6: Blau
 Pin 7: Gelb -> Auf den Anschluss und auf kondensator
-Pin 8: Schwarz -> LM339N Pins 4 und 6 und 10
+Pin 8: Schwarz -> LM339N Pins 4 und 6 und 10 (Was mit pin 8? Dann ist es wahrscheinlich gnd! (Kommentar von Leo))
 Pin 9: (Mitte) Kuhfarbe
 
 
