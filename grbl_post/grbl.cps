@@ -17,7 +17,7 @@ legal = "Copyright (C) 2012-2019 by Autodesk, Inc.";
 certificationLevel = 2;
 minimumRevision = 40783;
 
-longDescription = "Generic milling post for Grbl.";
+longDescription = "Milling Post for VHF CAM330 with grbl";
 
 extension = "nc";
 setCodePage("ascii");
@@ -35,20 +35,18 @@ allowedCircularPlanes = undefined; // allow any circular motion
 
 // user-defined properties
 properties = {
-  writeMachine: true, // write machine
   writeTools: true, // writes the tools
   useG28: true, // disable to avoid G28 output for safe machine retracts - when disabled you must manually ensure safe retracts
   showSequenceNumbers: false, // show sequence numbers
   sequenceNumberStart: 10, // first sequence number
   sequenceNumberIncrement: 1, // increment for sequence numbers
   separateWordsWithSpace: true, // specifies that the words should be separated with a white space
-  useToolChanger: true, // output T-code on tool changes
-  useM06: true // output M06 with tool changes
+  useToolChanger: false, // output T-code on tool changes
+  useM06: false // output M06 with tool changes
 };
 
 // user-defined property definitions
 propertyDefinitions = {
-  writeMachine: {title:"Write machine", description:"Output the machine settings in the header of the code.", group:0, type:"boolean"},
   writeTools: {title:"Write tool list", description:"Output a tool list in the header of the code.", group:0, type:"boolean"},
   useG28: {title:"G28 Safe retracts", description:"Disable to avoid G28 output for safe machine retracts. When disabled, you must manually ensure safe retracts.", type:"boolean"},
   showSequenceNumbers: {title:"Use sequence numbers", description:"Use sequence numbers for each block of outputted code.", group:1, type:"boolean"},
@@ -157,19 +155,6 @@ function onOpen() {
   var vendor = machineConfiguration.getVendor();
   var model = machineConfiguration.getModel();
   var description = machineConfiguration.getDescription();
-
-  if (properties.writeMachine && (vendor || model || description)) {
-    writeComment(localize("Machine"));
-    if (vendor) {
-      writeComment("  " + localize("vendor") + ": " + vendor);
-    }
-    if (model) {
-      writeComment("  " + localize("model") + ": " + model);
-    }
-    if (description) {
-      writeComment("  " + localize("description") + ": "  + description);
-    }
-  }
 
   // dump tool information
   if (properties.writeTools) {
