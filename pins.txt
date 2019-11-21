@@ -1,18 +1,36 @@
 Z-Achse:
-Pin 1: Grau
-Pin 2: Braun
-Pin 3: Orange
-Pin 4: Grün
-Pin 5: Rot
-Pin 6: Blau
-Pin 7: Gelb -> Auf den Anschluss und auf kondensator
-Pin 8: Schwarz -> LM339N Pins 4 und 6 und 10 (Was mit pin 8? Dann ist es wahrscheinlich gnd! (Kommentar von Leo))
-Pin 9: (Mitte) Kuhfarbe
+Pin 1: Grau -> L6203 Links OUT1 
+Pin 2: Braun -> L6203 Links OUT2
+Pin 3: Orange -> L6203 Rechts OUT1
+Pin 4: Grün -> L6203 Rechts OUT2
+Pin 5: Rot -> Hängt dirket auf der Anschlussleiste, dicke Leitung, Plus? Bremse an Z
+Pin 6: Blau -> Hängt direkt auf der Anschlussleste, dicke Leitung, Minus Bremse an Z
+Pin 7: Gelb -> Endstop
+Pin 8: Schwarz -> GND
+Pin 9: (Mitte) Kuhfarbe -> unbekannt
+
+
+rot -> blau sind 24V
+
+
+
+Stecker neu:
+Pin 1: Magenta -> A-
+Pin 2: Blau -> A+
+Pin 3: Rot -> B-
+Pin 4: Gelb/Grün -> B+
+Pin 5: Orange -> Bremse
+Pin 6: Gelb -> Bremse
+Pin 7: Weiß -> Endstop
+Pin 8: Braun -> GND
+
 
 
 
 
 SPindel:
+
+Sinus: 9.5V amplitude 50HZ
 
 D-Sbu25:
 1 : schwarz, 50HZ rauschen, vielleicht digital signal?
@@ -28,8 +46,8 @@ D-Sbu25:
 11: orange, 50 hz sinus, PORT unbekannt
 12: rot, 50 hz sinus, PORT unbekannt
 13: hellbraun, 50 hz sinus, PORT unbekannt
-14: schwarz weiß, 50 hz clock, 
-15: grau schwarz, 50 hz clock
+14: schwarz weiß, 50 hz clock, vom SPC generiert fast identisch mit 15
+15: grau schwarz, 50 hz clock, vom spc generiert fast identisch mit 14
 16: lila 2, 50 hz sinus wenn aus, PORT 2 PIN 1
 17: hellblau schwarz, 50 hz sinus wenn aus, PORT 2 PIN 3
 18: blau weiß, 50 hz sinus wenn aus, PORT 1 PIN 0
