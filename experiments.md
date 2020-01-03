@@ -35,3 +35,6 @@ Abstand Ist: 9,8mm
 Sehr Saubere Kante
 Abstand Soll: 10mm
 Abstand Ist: 9,84mm
+#### 2D-Adaptive Clearing, 4mm Tiefenschnitte, Gegenlauf, Tolleranz=0.001, Nut Freiräumen, anschließend 2D Kontur
+Abstand Soll: 10mm
+Abstand Ist: 9,85mm
