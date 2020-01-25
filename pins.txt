@@ -95,5 +95,7 @@ das relais verbindet 25 und 24 wenns geschaltet.  24 und 25 sind durchgeschaltet
 
 
 
-
+1,2,14,15 mit 3,3V bzw GND
+24,25 Brücke Notaus
+5 auf gnd ziehen, open drain
 
