@@ -58,3 +58,38 @@ D-Sbu25:
 23: orange schwarz, sinus wenn aus, unbekannt
 24: rot weiß, sinus wenn aus, port unbekannt
 25: braun weeiß, sinus, port unbekannt
+
+
+Zustand: Spindel Fehler
+1: 8V 50hz sinus
+2: 8V 60hz sinus
+3: 
+
+
+Zwischen 1 und 2: 4V. 1=GND
+3 4 5 werden nicht getrieben vom cnc
+6= Port 1 bit 5 (32)
+7= Port 1 bit 3 (8)
+8= Port 1 bit 1 (2)
+9= Port 2 bit 4 (16)
+10= Port2 bit 2 (4)
+11= Port2 bit 0 (1)
+12= erstmal unbekannt
+13= erstmal unbekannt
+14= erstmal unbekannt
+15= ist high aber unbekannt
+16= schwebt
+17= Port 1 bit 7 (128)
+18= Port 1 bit 6 (64)
+19= Port 1 bit 4 (16)
+20= Port 1 bit 2 (4)
+21= Port 1 bit 0 (1)
+22= unbekannt low
+23= Port 2 bit 1 (2)
+24= unbekannt low
+25=
+
+
+
+
+
