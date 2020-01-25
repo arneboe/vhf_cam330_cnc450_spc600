@@ -68,26 +68,30 @@ Zustand: Spindel Fehler
 
 Zwischen 1 und 2: 4V. 1=GND
 3 4 5 werden nicht getrieben vom cnc
+4= spc zu cnc ich bin da
+5= notaus signal vom cnc zum spc, high wenn notaus ein, low wenn notaus aus 
 6= Port 1 bit 5 (32)
 7= Port 1 bit 3 (8)
 8= Port 1 bit 1 (2)
 9= Port 2 bit 4 (16)
 10= Port2 bit 2 (4)
 11= Port2 bit 0 (1)
-12= erstmal unbekannt
-13= erstmal unbekannt
-14= erstmal unbekannt
-15= ist high aber unbekannt
-16= schwebt
+12= not connected
+13= not connected
+14= GND (parallel zu 1)
+15= 4V (parallel zu zwei)
+16= schwebt   (high wenn beide verbunden sind)
 17= Port 1 bit 7 (128)
 18= Port 1 bit 6 (64)
 19= Port 1 bit 4 (16)
 20= Port 1 bit 2 (4)
 21= Port 1 bit 0 (1)
-22= unbekannt low
+22= unbekannt low  wird vom spc geprüft (vermutung Port 2 bit 3 Stekdose 2)
 23= Port 2 bit 1 (2)
-24= unbekannt low
-25=
+24= geht in cnc ans relais
+25= geht in cnc ans relais
+
+das relais verbindet 25 und 24 wenns geschaltet.  24 und 25 sind durchgeschaltet wenn auf 1 und 2 spannung anliegt
 
 
 
