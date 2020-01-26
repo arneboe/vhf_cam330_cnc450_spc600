@@ -315,6 +315,12 @@ function onSection() {
       warning(localize("Spindle speed exceeds maximum value."));
     }
 
+   
+    if((spindleSpeed % 1000) != 0)
+    {
+      error(localize("Spindle speed needs to be a multiple of 1000"));
+      return;
+    }
     //TODO hier speed checken?
 
     writeBlock(
@@ -411,6 +417,11 @@ function onDwell(seconds) {
 }
 
 function onSpindleSpeed(spindleSpeed) {
+  if((spindleSpeed % 1000) != 0)
+  {
+    error(localize("Spindle speed needs to be a multiple of 1000"));
+    return;
+  }
   writeBlock(sOutput.format(spindleSpeed));
   onDwell(dwellTime);
 }
