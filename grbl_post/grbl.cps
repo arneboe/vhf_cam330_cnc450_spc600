@@ -32,6 +32,7 @@ minimumCircularSweep = toRad(0.01);
 maximumCircularSweep = toRad(180);
 allowHelicalMoves = true;
 allowedCircularPlanes = undefined; // allow any circular motion
+dwellTime = 8;
 
 // user-defined properties
 properties = {
@@ -313,9 +314,13 @@ function onSection() {
     if (spindleSpeed > 99999) {
       warning(localize("Spindle speed exceeds maximum value."));
     }
+
+    //TODO hier speed checken?
+
     writeBlock(
       sOutput.format(spindleSpeed), mFormat.format(tool.clockwise ? 3 : 4)
     );
+    onDwell(dwellTime);
   }
 
   // wcs
@@ -407,6 +412,7 @@ function onDwell(seconds) {
 
 function onSpindleSpeed(spindleSpeed) {
   writeBlock(sOutput.format(spindleSpeed));
+  onDwell(dwellTime);
 }
 
 var pendingRadiusCompensation = -1;
