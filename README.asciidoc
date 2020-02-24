@@ -11,3 +11,6 @@ autodesk_export_cnc.cps -- Default autodesk cnc exporter for cps development
 vhf_cam330SPC600.dev -- Configuration file used by cenon 3.3 to control the cnc450.
 
 vhf_cam330_Anleitung_ocr.pdf -- German manual for the cam330 from 1996.
+
+gui -- A simple python gui that can be used to stream commands to the old cnc controller
+
