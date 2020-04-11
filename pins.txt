@@ -1,3 +1,18 @@
+Grbl 10 Pol Wannenstecker
+Pin 1:  5V
+Pin 2:  D8  Stepper Enable
+Pin 3:  D5 Direction x
+Pin 4:  D2 Step x
+Pin 5:  D6 Direction y
+Pin 6:  D3 Step y
+Pin 7:  D7 Direction z
+Pin 8:  D4  Step z
+Pin 9:  NC
+Pin 10: GND
+
+
+
+
 Z-Achse:
 Pin 1: Grau -> L6203 Links OUT1 
 Pin 2: Braun -> L6203 Links OUT2
