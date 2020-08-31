@@ -1,5 +1,7 @@
 == vhf_cam330_cnc450_spc600
-Stuff needed to get the VHF CAM330 running with Fusion 360
+Stuff needed to get the VHF CAM330 running with Fusion 360.
+
+This repository is in quit a lot of disarray. Probably its best to drop me a message if you need anything :D
 
 
 === Files
